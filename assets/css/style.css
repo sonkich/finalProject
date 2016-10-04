@@ -1,0 +1,27 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+ul {
+   list-style: none;
+}
+
+#wrapper {
+   width: 90%;
+   margin: 0 auto;
+}
+
+.nav {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   border: 1px solid black;
+   padding: 7px;
+   margin-top: 10px;
+}
+
+.nav ul li {
+   float: left;
+}
