@@ -1,3 +1,48 @@
-<div>
-   <h1>home page</h1>
+<div id="home">
+	<div id="start" ng-style="{'display': start}">
+		<h1>CHOOSE YOUR BABY</h1>
+		
+		<div id="name">
+			<form action="" method="post">
+				<div>
+					<label for="baby-name">Baby name</label>
+				</div>
+					<input type="text" ng-model="babyName" id="baby-name" name="baby-name"/><span id="enter-name">{{error}}</span>
+			</form>
+		</div>
+		
+		<div id="child">
+			<div id="boy" ng-click="createBaby($event)"></div>
+			<div id="girl" ng-click="createBaby($event)"></div>
+		</div>
+	</div>
+	
+	<div id="game" ng-style="{'display': game}">
+		<div id="baby">
+			<img src="assets/img/bottle.jpg" alt="" id="drink"/>
+		</div>
+		<div id="bottle"></div>
+		<div id="jar"></div>
+		<div id="bear"></div>
+		<div id="pacifier"></div>
+		<div id="status">
+			<div>Name: {{name}}</div>
+			<label class="small-label">Food</label>
+			<div class="small-box">
+				<div class="food small"></div>
+			</div>
+			
+			<label class="small-label">Drink</label>
+			<div class="small-box">
+				<div class="drink small"></div>
+			</div>
+			
+			<label class="small-label">Happiness</label>
+			<div class="small-box">
+				<div class="happy small"></div>
+			</div>
+		</div>
+		
+		<div id="sound"></div>
+	</div>
 </div>

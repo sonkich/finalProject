@@ -1,0 +1,295 @@
+@CHARSET "UTF-8";
+
+#home {
+	width: 100%;
+	height: 570px;
+	margin: 0.5em auto;
+	background: url("../img/room.png") no-repeat center center fixed;
+	background-size: 100% 100%;
+	font-family: 'Arial, Helevetica', sans-serif;
+	font-weight: bold;
+}
+
+#start {
+	background-color: rgba(255, 255, 255, 0.6);
+	width: 97%;
+	height: 100%;
+	margin: 0 auto;
+	display: none;
+}
+
+#start h1 {
+	text-align: center;
+	padding-top: 1em;
+	color: #01A6C6;
+	text-shadow: 1px 1px #000000;
+	font-size: 2em;
+}
+
+#child {
+	width: 90%;
+	margin: 1em 4em;
+	display: inline-block;
+}
+
+#enter-name {
+	color: red;
+}
+
+#baby-name {
+	color: #01A6C6;
+	text-shadow: 1px 1px #D3D3D3;
+	font-weight: bold;
+}
+
+#baby-name:focus {
+	color: #01A6C6;
+	text-shadow: 1px 1px #D3D3D3;
+	font-weight: bold;
+}
+
+#boy {
+	background: url("../img/boy1.png") no-repeat center center;
+	background-size: 100% 100%;
+	width: 50%;
+	height: 400px;
+	float: left;
+	cursor:pointer;
+	
+}
+
+#girl {
+	background: url("../img/girl1.png") no-repeat center center;
+	background-size: 100% 100%;
+	width: 50%;
+	height: 400px;
+	float: right;
+	cursor:pointer;
+}
+
+#name {
+	text-align: center;
+	margin-top: 2em;
+}
+
+#baby-name {
+	background-color: transparent;
+}
+
+label {
+	color: #01A6C6;
+	text-shadow: 1px 1px #000000;
+	font-size: 1.3em;
+}
+
+.food, .drink, .happy {
+	height: 20px;
+	background-color: #01A6C6;
+}
+
+.food {
+	width: 30%;
+}
+
+.drink {
+	width: 70%;
+}
+
+.happy {
+	width: 20%;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-align: center;
+  border: 1px solid #dddddd;
+  box-shadow: 1px 1px #000000;
+  background-color: rgba(1,166,198,0.3);
+  color: #01A6C6;
+  text-shadow: 1px 1px #000000;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  border-radius: 30px; 
+  outline: none;
+  font-weight: bold;
+  width: 20%;
+  margin-top: 2em;
+  cursor:pointer;
+}
+  
+#game {
+	width: 97%;
+	height: 100%;
+	margin: 0 auto;
+	display: block;
+}
+  
+#baby {
+  	background: url("../img/girl1.png") no-repeat center center;
+	background-size: 100% 100%;
+	width: 400px;
+	height: 400px;
+	bottom: 3em;
+	left: 25em;
+	position: absolute;
+}
+  
+#bottle {
+  	background: url("../img/bottle.jpg") no-repeat center center;
+	background-size: 100% 100%;
+	width: 50px;
+	height: 100px;
+	bottom: 15.5em;
+	left: 2em;
+	position: absolute;
+	cursor: pointer;
+}
+  
+#jar {
+  	background: url("../img/jar.png") no-repeat center center;
+	background-size: 100% 100%;
+	width: 50px;
+	height: 50px;
+	bottom: 15.5em;
+	left: 6em;
+	position: absolute;
+	cursor: pointer;
+}
+  
+#bear {
+  	background: url("../img/bear.png") no-repeat center center;
+	background-size: 100% 100%;
+	width: 100px;
+	height: 150px;
+	bottom: 8em;
+	left: 52em;
+	position: absolute;
+	cursor: pointer;
+}
+  
+#pacifier {
+  	background: url("../img/pacifier.png") no-repeat center center;
+	background-size: 100% 100%;
+	width: 70px;
+	height: 70px;
+	bottom: 6em;
+	right: 6em;
+	position: absolute;
+	cursor: pointer;
+}
+
+@media all and (max-width: 1120px) {
+	#baby  {
+		left: 16em;
+	}
+	
+	#bear {
+		left: 38em;
+	}
+}
+
+@media all and (max-width: 900px) {
+	#baby  {
+		left: 6em;
+	}
+	
+	#bear {
+		left: 29em;
+	}
+	
+	#bottle {
+		left: 0em;
+	}
+	
+	#jar {
+		left: 3em;
+	}
+	
+	#pacifier {
+		right: 0em;
+	}
+}
+
+@media all and (min-height: 750px) {
+	#baby  {
+		bottom: 5em;
+	}
+	
+	#bear {
+		bottom: 10em;
+	}
+	#bottle {
+		bottom: 19.5em;
+	}
+	
+	#jar {
+		bottom: 19.3em;
+	}
+}
+
+@media all and (min-height: 1000px) {
+	#baby  {
+		bottom: 10em;
+	}
+	
+	#bear {
+		bottom: 15em;
+	}
+	#bottle {
+		bottom: 25.8em;
+	}
+	
+	#jar {
+		bottom: 25.6em;
+	}
+}
+
+#back {
+	width: 8%;
+	padding: 0.2em 0;
+	margin-top: 0em;
+}
+
+#status {
+	width: 120px;
+	padding-top: 1em;
+}
+  
+.small-box {
+	width: 100px;
+	height: 10px;
+	border: 1px solid white;
+	margin-bottom: 0.2em;
+}
+
+.small {
+	height: 10px;
+	background-color: rgba(255, 255, 255, 0.6);
+}
+
+.small-label {
+	font-size: 0.8em;
+	color: white;
+}
+
+#drink {
+	width: 80px;
+	height: 110px;
+	transform: rotate(50deg);
+	margin-top: 13em;
+	margin-left: 6em;
+	display: none;
+}
+
+#sound {
+	background: url("../img/sound_on.png") no-repeat center center;
+	background-size: 100% 100%;
+	width: 30px;
+	height: 30px;
+	top: 1em;
+	right: 1em;
+	position: absolute;
+	cursor: pointer;
+}
