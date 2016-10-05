@@ -1,5 +1,5 @@
 myApp.controller("homeController",function($scope, homeSvc){
-	$scope.hasBaby = 1;
+	$scope.hasBaby = -1;
 	$scope.user = 'sisi';
 	$scope.logged = 1;
 	
@@ -51,15 +51,18 @@ myApp.controller("homeController",function($scope, homeSvc){
 				'food': 0,
 				'drink': 0,
 				'happiness': 0,
-				'is_live': 1
+				'is_alive': 1,
+				'points': 0
 			}
 			
 			$scope.player = {
-					'parent': $scope.user,
-					'points': 0,
-					'food_q': 20,
-					'drink_q': 20,
-					'toys_q': 20,	
+					'username': $scope.user,
+					'diamonds': 0,
+					'food_q': 10,
+					'drink_q': 10,
+					'toys_q': 10,
+					'cloth_lvl': 1,
+					'food_lvl': 1
 			}
 			
 			if ($scope.hasBaby == -1) {

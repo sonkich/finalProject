@@ -2,13 +2,13 @@
 const DB_USER = 'root';
 const DB_PASS = '';
 
-$pdo = new PDO('mysql:host=localhost;dbname=final_project', DB_USER, DB_PASS, [
+$pdo = new PDO('mysql:host=localhost;dbname=babyland', DB_USER, DB_PASS, [
 		PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
 ]);
 
 $insertBabySql = 'INSERT INTO baby_info 
 		(parent, name, gender, food, drink, happiness, is_live) 
-		VALUES (?, ?, ?, ?, ?, ?, ?)';
+		VALUES (?, ?, ?, ?, ?, ?, ?, ?)';
 
 $request = file_get_contents('php://input');
 $request = json_decode($request, true);
@@ -20,9 +20,10 @@ if (!empty($request)) {
 	$food = empty($request['food']) ? '' : $request['food'];
 	$drink = empty($request['drink']) ? '' : $request['drink'];
 	$happiness = empty($request['happiness']) ? '' : $request['happiness'];
-	$isLive = empty($request['is_live']) ? '' : $request['is_live'];
+	$isAlive = empty($request['is_alive']) ? '' : $request['is_alive'];
+	$points = empty($request['points']) ? '' : $request['points'];
 
-	$baby = [$parent, $name, $gender, $food, $drink, $happiness, $isLive];
+	$baby = [$parent, $name, $gender, $food, $drink, $happiness, $isAlive];
 
 	$statement = $pdo->prepare($insertBabySql);
 
