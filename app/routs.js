@@ -8,6 +8,11 @@ myApp.config(function ($routeProvider, $locationProvider) {
          templateUrl: './app/views/games.html',
          controller: 'gamesController'
       })
+      .when('/login',{
+         templateUrl: './app/views/login.html',
+         controller: 'loginController'
+      })
+
       .otherwise({
            template:'<h1>Not found</h1><h2>{{message}}</h2>',
            controller:function($scope) {

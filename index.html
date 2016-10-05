@@ -5,28 +5,30 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <title>Babyland</title>
-	
+
    <link rel="stylesheet" href="assets/css/reset.css">
    <link rel="stylesheet" href="assets/css/style.css">
    <link rel="stylesheet" href="assets/css/home.css">
+
+   <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai" rel="stylesheet">
 </head>
 <body ng-controller="mainController">
 <div class="container" id="wrapper">
    <div class="nav">
+      <ul>
+         <li><a href="#/">Home</a></li>
+         <li><a href="#/games">Games</a></li>
+         <li><a href="#">Ranking</a></li>
+         <li><a href="#">Friends</a></li>
+      </ul>
       <span class="logo">
-      asd
+      BabyLand
       </span>
       <ul>
-         <li><a href="#">link1</a></li>
-         <li><a href="#">link2</a></li>
-         <li><a href="#">link3</a></li>
-         <li><a href="#">link4</a></li>
-      </ul>
-      <ul>
-         <li><span>s</span><span></span></li>
-         <li><span>s</span><span></span></li>
-         <li><span>s</span><span></span></li>
-         <li><span>s</span><span></span></li>
+         <li><img src="assets/img/diamond.png"/><span class="stats">5</span></li>
+         <li><img src="assets/img/meat.png"/><span class="stats">6</span></li>
+         <li><img src="assets/img/water.png"/><span class="stats">7</span></li>
+         <li><img src="assets/img/teddy-bear.png"/><span class="stats">8</span></li>
       </ul>
    </div>
    <div ng-view>
@@ -43,6 +45,7 @@
 <script src="./app/controllers/mainController.js"></script>
 <script src="./app/controllers/homeController.js"></script>
 <script src="./app/controllers/gamesController.js"></script>
+<script src="./app/controllers/loginController.js"></script>
 <script src="./app/services/homeSvc.js"></script>
 </body>
 </html>
