@@ -10,7 +10,7 @@
 	font-weight: bold;
 }
 
-#start {
+#home #start {
 	background-color: rgba(255, 255, 255, 0.6);
 	width: 97%;
 	height: 100%;
@@ -18,7 +18,7 @@
 	display: none;
 }
 
-#start h1 {
+#home #start h1 {
 	text-align: center;
 	padding-top: 1em;
 	color: #01A6C6;
@@ -26,29 +26,41 @@
 	font-size: 2em;
 }
 
-#child {
+#home #start #name {
+	text-align: center;
+	margin-top: 2em;
+}
+
+#home #start #name label {
+	color: #01A6C6;
+	text-shadow: 1px 1px #000000;
+	font-size: 1.3em;
+}
+
+#home #start #name #baby-name {
+	background-color: transparent;
+	color: #01A6C6;
+	text-shadow: 1px 1px #D3D3D3;
+	font-weight: bold;
+}
+
+#home #start #name #baby-name:focus {
+	color: #01A6C6;
+	text-shadow: 1px 1px #D3D3D3;
+	font-weight: bold;
+}
+
+#home #start #name #enter-name {
+	color: red;
+}
+
+#home #start #child {
 	width: 90%;
 	margin: 1em 4em;
 	display: inline-block;
 }
 
-#enter-name {
-	color: red;
-}
-
-#baby-name {
-	color: #01A6C6;
-	text-shadow: 1px 1px #D3D3D3;
-	font-weight: bold;
-}
-
-#baby-name:focus {
-	color: #01A6C6;
-	text-shadow: 1px 1px #D3D3D3;
-	font-weight: bold;
-}
-
-#boy {
+#home #start #child #boy {
 	background: url("../img/boy1.png") no-repeat center center;
 	background-size: 100% 100%;
 	width: 50%;
@@ -58,7 +70,7 @@
 	
 }
 
-#girl {
+#home #start #child #girl {
 	background: url("../img/girl1.png") no-repeat center center;
 	background-size: 100% 100%;
 	width: 50%;
@@ -67,37 +79,199 @@
 	cursor:pointer;
 }
 
-#name {
-	text-align: center;
-	margin-top: 2em;
+#home #game {
+	width: 97%;
+	height: 100%;
+	margin: 0 auto;
+	display: block;
 }
 
-#baby-name {
-	background-color: transparent;
+#home #game #baby {
+  	background: url("../img/girl1.png") no-repeat center center;
+	background-size: 100% 100%;
+	width: 400px;
+	height: 400px;
+	bottom: 3em;
+	left: 25em;
+	position: absolute;
 }
 
-label {
-	color: #01A6C6;
-	text-shadow: 1px 1px #000000;
-	font-size: 1.3em;
+#home #game #baby #drink {
+	width: 80px;
+	height: 110px;
+	transform: rotate(50deg);
+	margin-top: 13em;
+	margin-left: 6em;
+	display: none;
 }
 
-.food, .drink, .happy {
-	height: 20px;
-	background-color: #01A6C6;
+#home #game #bottle {
+  	background: url("../img/bottle.jpg") no-repeat center center;
+	background-size: 100% 100%;
+	width: 50px;
+	height: 100px;
+	bottom: 15.5em;
+	left: 2em;
+	position: absolute;
+	cursor: pointer;
 }
 
-.food {
+#home #game #jar {
+  	background: url("../img/jar.png") no-repeat center center;
+	background-size: 100% 100%;
+	width: 50px;
+	height: 50px;
+	bottom: 15.5em;
+	left: 6em;
+	position: absolute;
+	cursor: pointer;
+}
+
+#home #game #bear {
+  	background: url("../img/bear.png") no-repeat center center;
+	background-size: 100% 100%;
+	width: 100px;
+	height: 150px;
+	bottom: 8em;
+	left: 52em;
+	position: absolute;
+	cursor: pointer;
+}
+  
+#home #game #pacifier {
+  	background: url("../img/pacifier.png") no-repeat center center;
+	background-size: 100% 100%;
+	width: 70px;
+	height: 70px;
+	bottom: 6em;
+	right: 6em;
+	position: absolute;
+	cursor: pointer;
+}
+
+#home #game #status {
+	width: 120px;
+	padding-top: 1em;
+}
+
+#home #game #status h1 {
+	color: white;
+}
+
+#home #game #status .small-label {
+	font-size: 0.8em;
+	color: white;
+}
+
+#home #game #status .small-box {
+	width: 100px;
+	height: 10px;
+	border: 1px solid white;
+	margin-bottom: 0.2em;
+}
+
+
+
+
+
+#home #game #status .small-box .food, 
+#home #game #status .small-box .drink, 
+#home #game #status .small-box .happy {
+	height: 10px;
+	background-color: rgba(255, 255, 255, 0.6);
+}
+
+#home #game #status .small-box .food {
 	width: 30%;
 }
 
-.drink {
+#home #game #status .small-box .drink {
 	width: 70%;
 }
 
-.happy {
+#home #game #status .small-box .happy {
 	width: 20%;
 }
+
+#home #game #sound {
+	background: url("../img/sound_on.png") no-repeat center center;
+	background-size: 100% 100%;
+	width: 30px;
+	height: 30px;
+	top: 4em;
+	right: 4em;
+	position: absolute;
+	cursor: pointer;
+}
+
+
+@media all and (max-width: 1120px) {
+	#home #game #baby  {
+		left: 16em;
+	}
+	
+	#home #game #bear {
+		left: 38em;
+	}
+}
+
+@media all and (max-width: 900px) {
+	#home #game #baby  {
+		left: 6em;
+	}
+	
+	#home #game #bear {
+		left: 29em;
+	}
+	
+	#home #game #bottle {
+		left: 0em;
+	}
+	
+	#home #game #jar {
+		left: 3em;
+	}
+	
+	#home #game #pacifier {
+		right: 0em;
+	}
+}
+
+@media all and (min-height: 750px) {
+	#home #game #baby  {
+		bottom: 5em;
+	}
+	
+	#home #game #bear {
+		bottom: 10em;
+	}
+	#home #game #bottle {
+		bottom: 19.5em;
+	}
+	
+	#home #game #jar {
+		bottom: 19.3em;
+	}
+}
+
+@media all and (min-height: 1000px) {
+	#home #game #baby  {
+		bottom: 10em;
+	}
+	
+	#home #game #bear {
+		bottom: 15em;
+	}
+	#home #game #bottle {
+		bottom: 25.8em;
+	}
+	
+	#home #game #jar {
+		bottom: 25.6em;
+	}
+}
+
+
 
 .button {
   display: inline-block;
@@ -117,179 +291,4 @@ label {
   width: 20%;
   margin-top: 2em;
   cursor:pointer;
-}
-  
-#game {
-	width: 97%;
-	height: 100%;
-	margin: 0 auto;
-	display: block;
-}
-  
-#baby {
-  	background: url("../img/girl1.png") no-repeat center center;
-	background-size: 100% 100%;
-	width: 400px;
-	height: 400px;
-	bottom: 3em;
-	left: 25em;
-	position: absolute;
-}
-  
-#bottle {
-  	background: url("../img/bottle.jpg") no-repeat center center;
-	background-size: 100% 100%;
-	width: 50px;
-	height: 100px;
-	bottom: 15.5em;
-	left: 2em;
-	position: absolute;
-	cursor: pointer;
-}
-  
-#jar {
-  	background: url("../img/jar.png") no-repeat center center;
-	background-size: 100% 100%;
-	width: 50px;
-	height: 50px;
-	bottom: 15.5em;
-	left: 6em;
-	position: absolute;
-	cursor: pointer;
-}
-  
-#bear {
-  	background: url("../img/bear.png") no-repeat center center;
-	background-size: 100% 100%;
-	width: 100px;
-	height: 150px;
-	bottom: 8em;
-	left: 52em;
-	position: absolute;
-	cursor: pointer;
-}
-  
-#pacifier {
-  	background: url("../img/pacifier.png") no-repeat center center;
-	background-size: 100% 100%;
-	width: 70px;
-	height: 70px;
-	bottom: 6em;
-	right: 6em;
-	position: absolute;
-	cursor: pointer;
-}
-
-@media all and (max-width: 1120px) {
-	#baby  {
-		left: 16em;
-	}
-	
-	#bear {
-		left: 38em;
-	}
-}
-
-@media all and (max-width: 900px) {
-	#baby  {
-		left: 6em;
-	}
-	
-	#bear {
-		left: 29em;
-	}
-	
-	#bottle {
-		left: 0em;
-	}
-	
-	#jar {
-		left: 3em;
-	}
-	
-	#pacifier {
-		right: 0em;
-	}
-}
-
-@media all and (min-height: 750px) {
-	#baby  {
-		bottom: 5em;
-	}
-	
-	#bear {
-		bottom: 10em;
-	}
-	#bottle {
-		bottom: 19.5em;
-	}
-	
-	#jar {
-		bottom: 19.3em;
-	}
-}
-
-@media all and (min-height: 1000px) {
-	#baby  {
-		bottom: 10em;
-	}
-	
-	#bear {
-		bottom: 15em;
-	}
-	#bottle {
-		bottom: 25.8em;
-	}
-	
-	#jar {
-		bottom: 25.6em;
-	}
-}
-
-#back {
-	width: 8%;
-	padding: 0.2em 0;
-	margin-top: 0em;
-}
-
-#status {
-	width: 120px;
-	padding-top: 1em;
-}
-  
-.small-box {
-	width: 100px;
-	height: 10px;
-	border: 1px solid white;
-	margin-bottom: 0.2em;
-}
-
-.small {
-	height: 10px;
-	background-color: rgba(255, 255, 255, 0.6);
-}
-
-.small-label {
-	font-size: 0.8em;
-	color: white;
-}
-
-#drink {
-	width: 80px;
-	height: 110px;
-	transform: rotate(50deg);
-	margin-top: 13em;
-	margin-left: 6em;
-	display: none;
-}
-
-#sound {
-	background: url("../img/sound_on.png") no-repeat center center;
-	background-size: 100% 100%;
-	width: 30px;
-	height: 30px;
-	top: 1em;
-	right: 1em;
-	position: absolute;
-	cursor: pointer;
 }
