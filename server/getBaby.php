@@ -11,9 +11,8 @@ $request = json_decode($request, true);
 
 $userName = empty($request['username']) ? '' : $request['username'];
 
-$sth = $pdo->prepare("SELECT parent, name, gender, food, drink, happiness, is_alive, points 
-		FROM baby_info WHERE parent='$userName'");
-$sth->execute();
+$sth = $pdo->prepare("SELECT * FROM baby_info WHERE parent=:parent");
+$sth->execute([':parent' => $userName]);
 
 $result = $sth->fetchAll(PDO::FETCH_ASSOC);
 

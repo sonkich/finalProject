@@ -7,8 +7,8 @@ $pdo = new PDO('mysql:host=localhost;dbname=babyland', DB_USER, DB_PASS, [
 ]);
 
 $insertBabySql = 'INSERT INTO baby_info 
-		(parent, name, gender, food, drink, happiness, is_live) 
-		VALUES (?, ?, ?, ?, ?, ?, ?, ?)';
+		(parent, name, gender, food, drink, happiness, is_alive) 
+		VALUES (?, ?, ?, ?, ?, ?, ?)';
 
 $request = file_get_contents('php://input');
 $request = json_decode($request, true);
@@ -21,7 +21,6 @@ if (!empty($request)) {
 	$drink = empty($request['drink']) ? '' : $request['drink'];
 	$happiness = empty($request['happiness']) ? '' : $request['happiness'];
 	$isAlive = empty($request['is_alive']) ? '' : $request['is_alive'];
-	$points = empty($request['points']) ? '' : $request['points'];
 
 	$baby = [$parent, $name, $gender, $food, $drink, $happiness, $isAlive];
 

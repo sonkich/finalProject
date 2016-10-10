@@ -7,7 +7,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=babyland', DB_USER, DB_PASS, [
 ]);
 
 $sth = $pdo->prepare('UPDATE baby_info SET name = :name, gender = :gender, food = :food, drink = :drink,
-		happiness = :happiness, is_alive = :is_alive, points = :points WHERE parent = :parent');
+		happiness = :happiness, is_alive = :is_alive WHERE parent = :parent');
 
 $request = file_get_contents('php://input');
 $request = json_decode($request, true);
@@ -19,7 +19,7 @@ $food = empty($request['food']) ? '' : $request['food'];
 $drink = empty($request['drink']) ? '' : $request['drink'];
 $happiness = empty($request['happiness']) ? '' : $request['happiness'];
 $isAlive = empty($request['is_alive']) ? '' : $request['is_alive'];
-$points = empty($request['points']) ? '' : $request['points'];
+
 
 $sth->execute([':name' => $name, ':gender' => $gender, ':food' => $food, ':drink' => $drink,
 		':happiness' => $happiness, ':is_live' => $isAlive, ':parent' => $parent]);

@@ -11,9 +11,8 @@ $request = json_decode($request, true);
 
 $userName = empty($request['username']) ? '' : $request['username'];
 
-$sth = $pdo->prepare("SELECT username, diamonds, food_q, drink_q, toys_q, cloth_lvl, food_lvl
-		FROM user_stats WHERE username='$userName'");
-$sth->execute();
+$sth = $pdo->prepare("SELECT * FROM user_stats WHERE username=:username");
+$sth->execute([':username' => $userName]);
 
 $result = $sth->fetchAll(PDO::FETCH_ASSOC);
 

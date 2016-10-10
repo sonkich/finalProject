@@ -1,5 +1,5 @@
 <div id="home">
-	<div id="start" ng-style="{'display': start}">
+	<div id="start" ng-show="show==1">
 		<h1>CHOOSE YOUR BABY</h1>
 		
 		<div id="name">
@@ -17,29 +17,29 @@
 		</div>
 	</div>
 	
-	<div id="game" ng-style="{'display': game}">
+	<div id="game" ng-hide="show==1">
 		<div id="baby">
 			<img src="assets/img/bottle.jpg" alt="" id="drink"/>
 		</div>
-		<div id="bottle"></div>
-		<div id="jar"></div>
-		<div id="bear"></div>
-		<div id="pacifier"></div>
+		<div id="bottle" class="puls" ng-click="play($event)"></div>
+		<div id="jar" class="puls" ng-click="play($event)"></div>
+		<div id="bear" class="puls" ng-click="play($event)"></div>
+		<div id="pacifier" class="puls"></div>
 		<div id="status">
-			<h1>Name: {{name}}</h1>
+			<h1>Name: {{baby.name}}</h1>
 			<label class="small-label">Food</label>
 			<div class="small-box">
-				<div class="food"></div>
+				<div class="food" ng-style="{'width': baby.food+'%'}"></div>
 			</div>
 			
 			<label class="small-label">Drink</label>
 			<div class="small-box">
-				<div class="drink"></div>
+				<div class="drink" ng-style="{'width': baby.drink+'%'}"></div>
 			</div>
 			
 			<label class="small-label">Happiness</label>
 			<div class="small-box">
-				<div class="happy"></div>
+				<div class="happy" ng-style="{'width': baby.happiness+'%'}"></div>
 			</div>
 		</div>
 		
