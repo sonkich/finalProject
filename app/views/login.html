@@ -3,19 +3,19 @@
          <div class="login-data-wrapper">
             <label>
                Username
-               <input type="text" name="" id="">
+               <input type="text" ng-model="usernameData.username">
             </label>
          </div>
          <div class="login-data-wrapper">
             <label>
                Password
-               <input type="text" name="" id="">
+               <input type="text" ng-model="usernameData.password">
             </label>
          </div>
          <div class="error">
-         
+
          </div>
-         <button type="submit" name="button">Login</button>
+         <button ng-click="login()" name="button">Login</button>
 
    </form>
 </div>
