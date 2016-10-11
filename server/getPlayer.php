@@ -6,10 +6,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=babyland', DB_USER, DB_PASS, [
 		PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
 ]);
 
-$request = file_get_contents('php://input');
-$request = json_decode($request, true);
-
-$userName = empty($request['username']) ? '' : $request['username'];
+$userName = empty($_POST['username']) ? '' : $_POST['username'];
 
 $sth = $pdo->prepare("SELECT * FROM user_stats WHERE username=:username");
 $sth->execute([':username' => $userName]);

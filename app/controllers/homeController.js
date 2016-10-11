@@ -1,4 +1,4 @@
-myApp.controller("homeController",function($scope, $rootScope, homeSvc){
+myApp.controller("homeController",function($scope, $rootScope,  homeSvc){
 	$scope.hasBaby = 1;
 	$scope.user = 'sisi';
 	$scope.logged = 1;
@@ -99,5 +99,7 @@ myApp.controller("homeController",function($scope, $rootScope, homeSvc){
 				}
 			}
 		}
+		$rootScope.player.points = parseInt($rootScope.player.points) + 1;
+		homeSvc.setData($rootScope.baby, $rootScope.player);
 	}
 });

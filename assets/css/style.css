@@ -1,4 +1,8 @@
 
+body {
+	background-image: url('../img/back.jpg');
+}
+
 #wrapper {
    width: 90%;
    margin: 0 auto;
@@ -15,9 +19,9 @@
    margin-top: 10px;
    margin-bottom: 10px;
    background: #f6e6b4; /* Old browsers */
-   background: -moz-linear-gradient(top, #f6e6b4 0%, #ed9017 100%); /* FF3.6-15 */
-   background: -webkit-linear-gradient(top, #f6e6b4 0%,#ed9017 100%); /* Chrome10-25,Safari5.1-6 */
-   background: linear-gradient(to bottom, #f6e6b4 0%,#ed9017 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+   background: -moz-linear-gradient(top, #b2dfdb 0%, #00695c 100%); /* FF3.6-15 */
+   background: -webkit-linear-gradient(top, #b2dfdb 0%,#00695c 100%); /* Chrome10-25,Safari5.1-6 */
+   background: linear-gradient(to bottom, #b2dfdb 0%,#00695c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 .nav ul li {

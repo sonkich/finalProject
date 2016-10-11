@@ -1,4 +1,4 @@
-myApp.factory("homeSvc", function($http){
+myApp.factory("homeSvc", function($http, $httpParamSerializerJQLike){
 	var info = {
 			'baby': {},
 			'player': {}
@@ -11,7 +11,7 @@ myApp.factory("homeSvc", function($http){
 	  		  method: 'POST',
 	  		  url: './server/saveBaby.php',
 	  		  headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-	  		  data : baby,
+	  		  data : $httpParamSerializerJQLike(baby),
 	  		  
 	  		}).then(function successCallback(response) {
 	  			console.log('Baby save: ' + response.data);
@@ -27,7 +27,7 @@ myApp.factory("homeSvc", function($http){
 	  		  method: 'POST',
 	  		  url: './server/savePlayer.php',
 	  		  headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-	  		  data : player,
+	  		  data : $httpParamSerializerJQLike(player),
 	  		  
 	  		}).then(function successCallback(response) {
 	  			console.log('Player save: ' + response.data);
@@ -42,7 +42,7 @@ myApp.factory("homeSvc", function($http){
 	  		  method: 'POST',
 	  		  url: './server/getBaby.php',
 	  		  headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-	  		  data : user,
+	  		  data : $httpParamSerializerJQLike(user),
 	  		  
 	  		}).then(function successCallback(response) {
 	  			info.baby = response.data[0];
@@ -58,7 +58,7 @@ myApp.factory("homeSvc", function($http){
 	  		  method: 'POST',
 	  		  url: './server/getPlayer.php',
 	  		  headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-	  		  data : user,
+	  		  data : $httpParamSerializerJQLike(user),
 	  		  
 	  		}).then(function successCallback(response) {
 	  			info.player = response.data[0];
@@ -78,7 +78,7 @@ myApp.factory("homeSvc", function($http){
 	  		  method: 'POST',
 	  		  url: './server/updateBaby.php',
 	  		  headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-	  		  data : baby,
+	  		  data : $httpParamSerializerJQLike(baby),
 	  		  
 	  		}).then(function successCallback(response) {
 	  			console.log('Baby set: ' + response.data);
@@ -95,7 +95,7 @@ myApp.factory("homeSvc", function($http){
 	  		  method: 'POST',
 	  		  url: './server/updatePlayer.php',
 	  		  headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-	  		  data : player,
+	  		  data : $httpParamSerializerJQLike(player),
 	  		  
 	  		}).then(function successCallback(response) {
 	  			console.log('Player set: ' + response.data);
