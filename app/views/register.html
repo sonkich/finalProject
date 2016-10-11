@@ -1,1 +1,36 @@
-<h1>register</h1>
+<div class="register-wrapper">
+   <div>
+      <label for="">
+         Username
+         <input type="text" ng-model="userData.username"></label>
+      <p class="error">
+         {{userData.errors.username}}
+      </p>
+   </div>
+   <div>
+      <label for="">
+         Email
+         <input type="text" ng-model="userData.email"></label>
+         <p class="error">
+            {{userData.errors.email}}
+         </p>
+   </div>
+   <div>
+      <label for="">
+         Password
+         <input type="password" ng-model="userData.password"></label>
+         <p class="error">
+            {{userData.errors.password}}
+         </p>
+   </div>
+   <div>
+      <label for="">
+         Repeat password
+         <input type="password" ng-model="userData.password2"></label>
+         <p class="error">
+            {{userData.errors.password2}}
+         </p>
+   </div>
+
+   <button type="button" name="button">Register</button>
+</div>

@@ -4,6 +4,7 @@
 
 $errors = [];
 $response = [];
+$flag = false;
 
 if(!empty($_POST)){
 
@@ -17,7 +18,7 @@ if(!empty($_POST)){
     $count = $stmt->rowCount();
 
     if($count == 0){
-      $errors[] = "wrong name";
+      $flag = true;
    }else{
       if($pas == $row['password']){
          $response["username"] = $name;
@@ -25,16 +26,16 @@ if(!empty($_POST)){
          $st = $pdo->prepare("SELECT is_alive FROM baby_info WHERE parent=:parent");
          $st->execute(array(":parent"=>$name));
          $data = $st->fetch(PDO::FETCH_ASSOC);
-         var_dump($data);
          $response["isAlive"] = $data['is_alive'];
 
       }else{
-         $errors[] = "password incorect";
+         $flag = true;
       }
    }
 }
-if(count($errors) != 0){
 
-   $response[] = $errors;
-}
+   if($flag){
+      $response['error'] = "Wrong username or password";
+   }
+
 echo json_encode($response);

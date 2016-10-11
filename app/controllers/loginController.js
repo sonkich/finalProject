@@ -3,6 +3,7 @@ myApp.controller("loginController",function($scope,$http,$httpParamSerializerJQL
 
    $scope.usernameData.username = '';
    $scope.usernameData.password = '';
+   $scope.errors = '';
 
    $scope.login = function(){
 
@@ -13,7 +14,14 @@ myApp.controller("loginController",function($scope,$http,$httpParamSerializerJQL
 	  		  data : $httpParamSerializerJQLike($scope.usernameData)
 
 	  		}).then(function successCallback(response) {
-	  			   console.log(response);
+               console.log(response.data);
+               if(!response.data.username){
+                  $scope.errors = response.data.error;
+               }else{
+                  $scope.errors = '';
+                  localStorage.setItem("username", response.data.username);
+               }
+
 	  		  }, function errorCallback(response) {
 	  			   console.log(response + "ERROR");
 	  		});
