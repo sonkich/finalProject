@@ -1,10 +1,5 @@
 <?php
-const DB_USER = 'root';
-const DB_PASS = '';
-
-$pdo = new PDO('mysql:host=localhost;dbname=babyland', DB_USER, DB_PASS, [
-		PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-]);
+require_once 'dbconfig.php';
 
 $sth = $pdo->prepare('UPDATE user_stats SET diamonds = :diamonds, food_q = :food_q, drink_q = :drink_q, 
 		toys_q = :toys_q, cloth_lvl = :cloth_lvl, food_lvl = :food_lvl, points = :points 

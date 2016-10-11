@@ -1,6 +1,6 @@
 myApp.config(function ($routeProvider, $locationProvider) {
     $routeProvider
-      .when('/', {
+      .when('/users/:user', {
          templateUrl: './app/views/home.html',
          controller: 'homeController'
       })

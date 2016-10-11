@@ -1,10 +1,5 @@
 <?php
-const DB_USER = 'root';
-const DB_PASS = '';
-
-$pdo = new PDO('mysql:host=localhost;dbname=babyland', DB_USER, DB_PASS, [
-		PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-]);
+require_once 'dbconfig.php';
 
 $insertBabySql = 'INSERT INTO baby_info 
 		(parent, name, gender, food, drink, happiness, is_alive) 

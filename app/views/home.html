@@ -18,7 +18,7 @@
 	</div>
 	
 	<div id="game" ng-hide="show==1">
-		<div id="baby">
+		<div id="baby" ng-style="{'background': 'url(' + babyImage + ') no-repeat center center', 'background-size': '100% 100%'}">
 			<img src="assets/img/bottle.jpg" alt="" id="drink"/>
 		</div>
 		<div id="bottle" class="puls" ng-click="play($event)"></div>

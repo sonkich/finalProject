@@ -35,7 +35,7 @@ myApp.factory("homeSvc", function($http, $httpParamSerializerJQLike){
 	  		});
 	}
 
-	var getData = function(user) {
+	var getBaby = function(user) {
 		return $http({
 	  		  method: 'POST',
 	  		  url: './server/getBaby.php',
@@ -43,14 +43,14 @@ myApp.factory("homeSvc", function($http, $httpParamSerializerJQLike){
 	  		  data : $httpParamSerializerJQLike(user)
 	  		}).then(function successCallback(response) {
 	  			info.baby = response.data[0];
-	  			return getPlayer(user);
+	  			return info.baby;
 	  		  }, function errorCallback(response) {
 	  			console.log("ERROR");
 	  		    console.log(response.data);
 	  		});
 	}
 
-	function getPlayer(user) {
+	var getPlayer = function(user) {
 		return $http({
 	  		  method: 'POST',
 	  		  url: './server/getPlayer.php',
@@ -58,7 +58,7 @@ myApp.factory("homeSvc", function($http, $httpParamSerializerJQLike){
 	  		  data : $httpParamSerializerJQLike(user)
 	  		}).then(function successCallback(response) {
 	  			info.player = response.data[0];
-	  			return info;
+	  			return info.player;
 
 	  		  }, function errorCallback(response) {
 	  			console.log("ERROR");
@@ -102,7 +102,8 @@ myApp.factory("homeSvc", function($http, $httpParamSerializerJQLike){
 
 	return {
 		saveNewData: saveNewData,
-		getData: getData,
+		getBaby: getBaby,
+		getPlayer: getPlayer,
 		setData: setData
 	};
 });

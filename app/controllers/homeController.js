@@ -1,7 +1,7 @@
-myApp.controller("homeController",function($scope, $rootScope,  homeSvc){
-	$scope.hasBaby = 1;
-	$scope.user = 'sisi';
-	$scope.logged = 1;
+myApp.controller("homeController",function($scope, $rootScope,  $route, $routeParams, homeSvc){
+	$rootScope.hasBaby = 1;
+	$rootScope.user = 'sisi';
+	$rootScope.logged = 1;
 	
 	$scope.error = '';
 	$scope.babyName = '';
@@ -9,21 +9,32 @@ myApp.controller("homeController",function($scope, $rootScope,  homeSvc){
 	$rootScope.player = {};
 	
 	function loadGame() {
-		if ($scope.logged == 0) {
+		if ($rootScope.logged == 0) {
 			//window.open('index.html', '_self');
 		} else {
-			if ($scope.hasBaby == -1) {
+			if ($rootScope.hasBaby == -1) {
 				$scope.show = 1;
 			} else {
 				$scope.show = 2;
 				var user = {
-						'username': $scope.user
+						'username': $rootScope.user
 				}
 				
-				homeSvc.getData(user).then( function(result) {
-					$rootScope.baby = result.baby;
-					$rootScope.player = result.player;
+				var parent = {
+						'username': $routeParams.user
+				}
+				homeSvc.getPlayer(user).then( function(result) {
+					$rootScope.player = result;
 					console.log(result);
+					homeSvc.getBaby(parent).then(function(result) {
+						$rootScope.baby = result;
+						console.log(result);
+						if ($rootScope.baby.gender == 'm') {
+							$scope.babyImage = './assets/img/boy1.png'
+						} else {
+							$scope.babyImage = './assets/img/girl1.png'
+						}
+					})
 				})
 				
 			}
@@ -44,7 +55,7 @@ myApp.controller("homeController",function($scope, $rootScope,  homeSvc){
 				gender = 'f';
 			}
 			$rootScope.baby = {
-				'parent': $scope.user,
+				'parent': $rootScope.user,
 				'name': $scope.babyName,
 				'gender': gender,
 				'food': 0,
@@ -54,7 +65,7 @@ myApp.controller("homeController",function($scope, $rootScope,  homeSvc){
 			}
 			
 			$rootScope.player = {
-					'username': $scope.user,
+					'username': $rootScope.user,
 					'diamonds': 0,
 					'food_q': 10,
 					'drink_q': 10,
@@ -64,14 +75,14 @@ myApp.controller("homeController",function($scope, $rootScope,  homeSvc){
 					'points': 0
 			}
 			
-			if ($scope.hasBaby == -1) {
+			if ($rootScope.hasBaby == -1) {
 				homeSvc.saveNewData($scope.baby, $scope.player);
 			} else {
 				homeSvc.setData($scope.baby, $scope.player);
 			}
 			
 			
-			$scope.hasBaby = 1;
+			$rootScope.hasBaby = 1;
 			$scope.show = 2;
 		}
 	}

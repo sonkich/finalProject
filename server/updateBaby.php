@@ -1,10 +1,5 @@
 <?php
-const DB_USER = 'root';
-const DB_PASS = '';
-
-$pdo = new PDO('mysql:host=localhost;dbname=babyland', DB_USER, DB_PASS, [
-		PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-]);
+require_once 'dbconfig.php';
 
 $sth = $pdo->prepare('UPDATE baby_info SET name = :name, gender = :gender, food = :food, drink = :drink,
 		happiness = :happiness, is_alive = :is_alive WHERE parent = :parent');
