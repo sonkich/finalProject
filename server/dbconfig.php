@@ -1,7 +1,7 @@
 <?php
 
 $db_host = "localhost";
-$db_name = "it-calendar";
+$db_name = "babyland";
 $db_user = "root";
 $db_pass = "";
 try{

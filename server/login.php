@@ -22,11 +22,11 @@ if(!empty($_POST)){
       if($pas == $row['password']){
          $response["username"] = $name;
 
-         $stmt = $pdo->prepare("SELECT * FROM baby_info WHERE parent=:parent");
-         $stmt->execute(array(":parent"=>$name));
-         $data = $stmt->fetch(PDO::FETCH_ASSOC);
+         $st = $pdo->prepare("SELECT is_alive FROM baby_info WHERE parent=:parent");
+         $st->execute(array(":parent"=>$name));
+         $data = $st->fetch(PDO::FETCH_ASSOC);
          var_dump($data);
-         $response["isAlive"] = $data;
+         $response["isAlive"] = $data['is_alive'];
 
       }else{
          $errors[] = "password incorect";
