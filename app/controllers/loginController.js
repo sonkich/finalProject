@@ -1,4 +1,4 @@
-myApp.controller("loginController",function($scope,$http,$httpParamSerializerJQLike){
+myApp.controller("loginController",function($rootScope,$scope,$http,$httpParamSerializerJQLike){
    $scope.usernameData = {};
 
    $scope.usernameData.username = '';
