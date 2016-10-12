@@ -20,6 +20,9 @@ myApp.controller("loginController",function($scope,$http,$httpParamSerializerJQL
                }else{
                   $scope.errors = '';
                   localStorage.setItem("username", response.data.username);
+                  $rootScope.hasBaby = response.data.isAlive;
+               	$rootScope.user = response.data.username;
+               	$rootScope.logged = 1;
                }
 
 	  		  }, function errorCallback(response) {
