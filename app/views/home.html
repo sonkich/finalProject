@@ -19,12 +19,12 @@
 	
 	<div id="game" ng-hide="show==1">
 		<div id="baby" ng-style="{'background': 'url(' + babyImage + ') no-repeat center center', 'background-size': '100% 100%'}">
-			<img src="assets/img/bottle.jpg" alt="" id="drink"/>
+			<img src="assets/img/bottle.jpg" alt="" id="drink" ng-show="bottle==1"/>
 		</div>
 		<div id="bottle" class="puls" ng-click="play($event)"></div>
 		<div id="jar" class="puls" ng-click="play($event)"></div>
 		<div id="bear" class="puls" ng-click="play($event)"></div>
-		<div id="pacifier" class="puls"></div>
+		<div id="pacifier" class="puls" ng-click="sleep()"></div>
 		<div id="status">
 			<h1>Name: {{baby.name}}</h1>
 			<label class="small-label">Food</label>
@@ -43,6 +43,6 @@
 			</div>
 		</div>
 		
-		<div id="sound"></div>
+		<div id="sound" ng-click="soundOnOff()" ng-style="{'background': 'url(' + sound + ') no-repeat center center', 'background-size': '100% 100%'}"></div>
 	</div>
 </div>

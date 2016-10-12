@@ -4,9 +4,8 @@ myApp.factory("homeSvc", function($http, $httpParamSerializerJQLike){
 			'player': {}
 	};
 
-	var saveNewData = function(baby, player) {
+	var saveNewBaby = function(baby) {
 		info.baby = baby;
-		info.player = player;
 		$http({
 	  		  method: 'POST',
 	  		  url: './server/saveBaby.php',
@@ -14,21 +13,6 @@ myApp.factory("homeSvc", function($http, $httpParamSerializerJQLike){
 	  		  data : $httpParamSerializerJQLike(baby)
 	  		}).then(function successCallback(response) {
 	  			console.log('Baby save: ' + response.data);
-	  			saveNewPlayer(player);
-	  		  }, function errorCallback(response) {
-	  			console.log("ERROR");
-	  		    console.log(response.data);
-	  		});
-	}
-
-	function saveNewPlayer(player) {
-		$http({
-	  		  method: 'POST',
-	  		  url: './server/savePlayer.php',
-	  		  headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-	  		  data : $httpParamSerializerJQLike(player)
-	  		}).then(function successCallback(response) {
-	  			console.log('Player save: ' + response.data);
 	  		  }, function errorCallback(response) {
 	  			console.log("ERROR");
 	  		    console.log(response.data);
@@ -101,7 +85,7 @@ myApp.factory("homeSvc", function($http, $httpParamSerializerJQLike){
 	}
 
 	return {
-		saveNewData: saveNewData,
+		saveNewBaby: saveNewBaby,
 		getBaby: getBaby,
 		getPlayer: getPlayer,
 		setData: setData

@@ -1,4 +1,4 @@
-myApp.controller("loginController",function($rootScope,$scope,$http,$httpParamSerializerJQLike){
+myApp.controller("loginController",function($rootScope,$scope,$http,$httpParamSerializerJQLike, $location){
    $scope.usernameData = {};
 
    $scope.usernameData.username = '';
@@ -21,8 +21,9 @@ myApp.controller("loginController",function($rootScope,$scope,$http,$httpParamSe
                   $scope.errors = '';
                   localStorage.setItem("username", response.data.username);
                   $rootScope.hasBaby = response.data.isAlive;
-               	$rootScope.user = response.data.username;
-               	$rootScope.logged = 1;
+               	  $rootScope.user = response.data.username;
+               	  $rootScope.logged = 1;
+               	  $location.path('/users/' + response.data.username);
                }
 
 	  		  }, function errorCallback(response) {
