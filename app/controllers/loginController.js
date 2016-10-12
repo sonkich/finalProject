@@ -27,7 +27,4 @@ myApp.controller("loginController",function($scope,$http,$httpParamSerializerJQL
 	  		});
    };
 
-   function getHaveBaby (username){
-
-   };
 });

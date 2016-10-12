@@ -26,7 +26,7 @@ if(!empty($_POST)){
          $st = $pdo->prepare("SELECT is_alive FROM baby_info WHERE parent=:parent");
          $st->execute(array(":parent"=>$name));
          $data = $st->fetch(PDO::FETCH_ASSOC);
-         $response["isAlive"] = $data['is_alive'];
+         $response["isAlive"] = ($data['is_alive'] == 1)? 1 : -1;
 
       }else{
          $flag = true;

@@ -16,10 +16,6 @@ myApp.config(function ($routeProvider, $locationProvider) {
          templateUrl: './app/views/register.html',
          controller: 'registerController'
       })
-      .when('/user/:username',{
-         templateUrl: './app/views/register.html',
-         controller: 'registerController'
-      })
 
       .otherwise({
            template:'<h1>Not found</h1><h2>{{message}}</h2>',
