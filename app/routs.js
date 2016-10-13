@@ -16,6 +16,10 @@ myApp.config(function ($routeProvider, $locationProvider) {
          templateUrl: './app/views/register.html',
          controller: 'registerController'
       })
+      .when('/ranking',{
+         templateUrl: './app/views/ranking.html',
+         controller: 'rankController'
+      })
 
       .otherwise({
            template:'<h1>Not found</h1><h2>{{message}}</h2>',

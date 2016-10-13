@@ -8,7 +8,9 @@ body {
    margin: 0 auto;
 }
 
-.nav {
+.pagination, .carousel, .panel-title a { cursor: pointer; }
+
+.navigation {
    display: flex;
    flex-direction: row;
    justify-content: space-between;
@@ -24,12 +26,12 @@ body {
    background: linear-gradient(to bottom, #fdecda 0%,#f4b065 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
-.nav ul li {
+.navigation ul li {
    float: left;
    margin-right: 8px;
 }
 
-.nav a {
+.navigation a {
    font-family: 'Baloo Bhai', cursive;
    color: #eeeeee;
    font-size: 20px;
@@ -37,7 +39,7 @@ body {
    text-shadow: 0 0 1px rgba(0,0,0,0.5);
 }
 
-.nav a:hover {
+.navigation a:hover {
    text-shadow: 0 0 5px rgba(255,255,255,0.8)
 }
 
@@ -68,4 +70,28 @@ body {
 
 .login-wrapper label {
    color: white;
+}
+
+.profil {
+	width: 80%;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+	padding: 15px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.6);
+	border-left: 6px solid blue;
+
+	background-color: rgba(255,255,255,0.8);
+}
+
+.profil:first-child {
+	margin-top: 20px;
+}
+
+.pagination-wrapper {
+	text-align: center;
 }

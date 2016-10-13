@@ -1,0 +1,20 @@
+
+<div>
+   <div class="profil" ng-repeat="user in data | startFrom:(currentPage - 1) * pageSize | limitTo: pageSize">
+
+      <div class="username">
+         {{user.username}}
+      </div>
+      <div class="points">
+         {{user.points}}
+      </div>
+      <div class="buttons">
+         <button ng-click="openProfil($index)">Profil</button>
+         <button>Add friend</button>
+      </div>
+   </div>
+
+    <div class="pagination-wrapper">
+      <ul uib-pagination total-items="data.length" ng-model="currentPage" items-per-page="pageSize"></ul>
+    </div>
+</div>
