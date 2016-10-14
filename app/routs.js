@@ -2,11 +2,13 @@ myApp.config(function ($routeProvider, $locationProvider) {
     $routeProvider
       .when('/users/:user', {
          templateUrl: './app/views/home.html',
-         controller: 'homeController'
+         controller: 'homeController',
+         authenticated: true
       })
       .when('/games',{
          templateUrl: './app/views/games.html',
-         controller: 'gamesController'
+         controller: 'gamesController',
+         authenticated: true
       })
       .when('/login',{
          templateUrl: './app/views/login.html',
@@ -18,7 +20,8 @@ myApp.config(function ($routeProvider, $locationProvider) {
       })
       .when('/ranking',{
          templateUrl: './app/views/ranking.html',
-         controller: 'rankController'
+         controller: 'rankController',
+         authenticated: true
       })
 
       .otherwise({
@@ -29,3 +32,15 @@ myApp.config(function ($routeProvider, $locationProvider) {
       })
     ;
 })
+.run(function($rootScope,$location,loggedUserSvc){
+   $rootScope.$on('$routeChangeStart',function(event , next , current){
+
+
+      if (next.$$route.authenticated) {
+         console.log("next.$$route.authenticated");
+      }else{
+         console.log("NOT AUTh");
+      }
+   });
+
+});

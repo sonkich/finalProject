@@ -8,6 +8,10 @@ body {
    margin: 0 auto;
 }
 
+.red {
+	color: #FF5F49;
+}
+
 .pagination, .carousel, .panel-title a { cursor: pointer; }
 
 .navigation {
@@ -68,7 +72,7 @@ body {
    margin: 0 auto;
 }
 
-.login-wrapper label {
+.login-wrapper>label {
    color: white;
 }
 
