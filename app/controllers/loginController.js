@@ -5,6 +5,15 @@ myApp.controller("loginController",function(loggedUserSvc,$rootScope,$scope,$htt
    $scope.usernameData.password = '';
    $scope.errors = '';
 
+   checkForLog();
+
+
+   function checkForLog(){
+      if(loggedUserSvc.getInfo().logged){
+         $location.path('/users/' + loggedUserSvc.getInfo().username);
+      }
+   }
+
    $scope.login = function(){
 
       $http({
@@ -21,7 +30,7 @@ myApp.controller("loginController",function(loggedUserSvc,$rootScope,$scope,$htt
                   $scope.errors = '';
                   localStorage.setItem("username", response.data.username);
                   loggedUserSvc.setInfo(response.data.username);
-               	
+
                }
 
 	  		  }, function errorCallback(response) {

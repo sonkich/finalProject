@@ -30,6 +30,11 @@ myApp.config(function ($routeProvider, $locationProvider) {
          controller: 'toyGameController',
          authenticated: true
       })
+      .when('/friends',{
+         templateUrl: './app/views/friends.html',
+         controller: 'friendsController',
+         authenticated: true
+      })
 
 
       .otherwise({

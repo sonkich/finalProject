@@ -2,7 +2,7 @@
 
 require_once 'dbconfig.php';
 
-$errors = [];
+$errors['error'] = [];
 
 
 
@@ -35,7 +35,7 @@ if(!empty($_POST)){
 
 
       }else{
-           $errors['error'] = "You send request alrdy";
+           $errors['error'] = "You already have a pending request to this person";
       }
    }else{
       $errors['error'] = "You have $receiver in your friend list";
