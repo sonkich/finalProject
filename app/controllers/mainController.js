@@ -4,13 +4,7 @@ myApp.controller('mainController',function($scope,$location,$rootScope,loggedUse
 
 	$scope.logout = function() {
 	 	localStorage.removeItem("username");
-		$scope.parent = {};
-		$rootScope.hasBaby = {};
-		$rootScope.user = {};
-		$rootScope.logged = 0;
-
-		$location.path('/login');
-
+		loggedUserSvc.clearInfo();
 	}
 })
 .filter('startFrom',function(){
