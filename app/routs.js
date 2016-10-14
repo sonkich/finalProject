@@ -23,6 +23,12 @@ myApp.config(function ($routeProvider, $locationProvider) {
          controller: 'rankController',
          authenticated: true
       })
+      .when('/games/toyGame',{
+         templateUrl: './app/views/toyGame.html',
+         controller: 'toyGameController',
+         authenticated: true
+      })
+
 
       .otherwise({
            template:'<h1>Not found</h1><h2>{{message}}</h2>',

@@ -1,0 +1,15 @@
+<div class="animals-all-wrapper"> 
+
+
+      <div class="animals-wrapper">
+         <div class="animal" ng-repeat="icon in icons track by $index" >
+            <div class="animal-img" ng-show="icon.visible" ng-click="turnVisible($index)">
+               <img ng-src="{{icon.url}}"/>
+            </div>
+            <div class="animal-back" ng-show="!icon.visible" ng-click="turnVisible($index)">
+            </div>
+         </div>
+      </div>
+
+
+</div>
