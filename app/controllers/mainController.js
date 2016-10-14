@@ -6,6 +6,10 @@ myApp.controller('mainController',function($scope,$location,$rootScope,loggedUse
 	 	localStorage.removeItem("username");
 		loggedUserSvc.clearInfo();
 	}
+
+	$scope.checkLog = function(){
+		return loggedUserSvc.getInfo().logged;
+	}
 })
 .filter('startFrom',function(){
 	return function(data,start){

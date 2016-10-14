@@ -17,7 +17,7 @@
 </head>
 <body ng-controller="mainController">
 <div class="container" id="wrapper">
-   <div class="navigation">
+   <div class="navigation" ng-if="checkLog()">
 
       <ul>
          <li><a ng-href="#/users/{{parent}}">Home</a></li>
