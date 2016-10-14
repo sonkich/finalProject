@@ -1,4 +1,4 @@
-myApp.controller("homeController",function($scope, $rootScope,  $location, $route, $routeParams, homeSvc, $timeout){
+myApp.controller("homeController",function($scope, $rootScope,  $location, $route, $routeParams, homeSvc, loggedUserSvc, $timeout){
 	
 	$scope.error = '';
 	$scope.babyName = '';
@@ -10,10 +10,11 @@ myApp.controller("homeController",function($scope, $rootScope,  $location, $rout
 	var audio = new Audio();
 	
 	function loadGame() {
-		if ($rootScope.logged == 0) {
+		var userInfo = loggedUserSvc.getInfo();
+		if (userInfo.logged == false) {
 			$location.path('/login');
 		} else {
-			if ($rootScope.hasBaby == -1) {
+			if (userInfo.is_alive == -1) {
 				$scope.show = 1;
 				var user = {
 						'username': localStorage.getItem("username")
@@ -73,7 +74,7 @@ myApp.controller("homeController",function($scope, $rootScope,  $location, $rout
 				'is_alive': 1,
 			}
 			
-			if ($rootScope.hasBaby == -1) {
+			if (userInfo.is_alive == -1) {
 				homeSvc.saveNewBaby($rootScope.baby);
 			} else {
 				$rootScope.player = {
@@ -90,7 +91,7 @@ myApp.controller("homeController",function($scope, $rootScope,  $location, $rout
 			}
 			
 			
-			$rootScope.hasBaby = 1;
+			userInfo.is_alive = 1;
 			$scope.show = 2;
 		}
 	}
