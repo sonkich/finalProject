@@ -8,9 +8,10 @@ myApp.controller("homeController",function($scope, $rootScope,  $location, $rout
 	$scope.sound = './assets/img/sound_on.png';
 	$scope.bottle = 0;
 	var audio = new Audio();
-	
+	var userInfo = loggedUserSvc.getInfo();
+
 	function loadGame() {
-		var userInfo = loggedUserSvc.getInfo();
+		
 		if (userInfo.logged == false) {
 			$location.path('/login');
 		} else {
@@ -65,7 +66,7 @@ myApp.controller("homeController",function($scope, $rootScope,  $location, $rout
 				$scope.babyImage = './assets/img/girl1.png'
 			}
 			$rootScope.baby = {
-				'parent': $rootScope.user,
+				'parent': userInfo.username,
 				'name': $scope.babyName,
 				'gender': gender,
 				'food': 1,
@@ -78,7 +79,7 @@ myApp.controller("homeController",function($scope, $rootScope,  $location, $rout
 				homeSvc.saveNewBaby($rootScope.baby);
 			} else {
 				$rootScope.player = {
-						'username': $rootScope.user,
+						'username': userInfo.username,
 						'diamonds': 0,
 						'food_q': 10,
 						'drink_q': 10,
