@@ -1,4 +1,4 @@
-myApp.controller("rankController",function($scope,$http,$location,$rootScope){
+myApp.controller("rankController",function(loggedUserSvc,$scope,$http,$location,$rootScope,$httpParamSerializerJQLike){
 
 
    $scope.data = [];
@@ -15,17 +15,19 @@ myApp.controller("rankController",function($scope,$http,$location,$rootScope){
    $scope.sendFriendRequest = function(index) {
       var sendingData = {};
       sendingData.receiver = $scope.data[index].username;
-      sendingData.sender = $rootScope.parent;
+      sendingData.sender = loggedUserSvc.getInfo().username;
 
       if(sendingData.receiver != sendingData.sender){
          $http({
    	  		  method: 'POST',
-   	  		  url: './server/rank.php',
+   	  		  url: './server/addFriendRequest.php',
    	  		  headers: {'Content-Type': 'application/x-www-form-urlencoded'},
               data : $httpParamSerializerJQLike(sendingData)
 
    	  		}).then(function successCallback(response) {
-   	  			   console.log(response);
+   	  			   if(response.data.error.length != 0){
+                     alert(response.data.error)
+                  }
    	  		  }, function errorCallback(response) {
    	  			console.log("ERROR");
      		    console.log(response.data);

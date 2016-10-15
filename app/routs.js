@@ -12,11 +12,13 @@ myApp.config(function ($routeProvider, $locationProvider) {
       })
       .when('/login',{
          templateUrl: './app/views/login.html',
-         controller: 'loginController'
+         controller: 'loginController',
+         authenticated: false
       })
       .when('/register',{
          templateUrl: './app/views/register.html',
-         controller: 'registerController'
+         controller: 'registerController',
+         authenticated: false
       })
       .when('/ranking',{
          templateUrl: './app/views/ranking.html',
@@ -33,24 +35,32 @@ myApp.config(function ($routeProvider, $locationProvider) {
          controller: 'storeController',
          authenticated: true
       })
+      .when('/friends',{
+         templateUrl: './app/views/friends.html',
+         controller: 'friendsController',
+         authenticated: true
+      })
 
       .otherwise({
-           template:'<h1>Not found</h1><h2>{{message}}</h2>',
-           controller:function($scope) {
-                $scope.message='not found page is shown'
-           }
+          redirectTo : "/login"
       })
     ;
 })
 .run(function($rootScope,$location,loggedUserSvc){
    $rootScope.$on('$routeChangeStart',function(event , next , current){
 
+      if(next.$$route){
 
-      if (next.$$route.authenticated) {
-         console.log("next.$$route.authenticated");
-      }else{
-         console.log("NOT AUTh");
+         if (next.$$route.authenticated) {
+            if(!loggedUserSvc.getInfo().logged){
+               $location.path('#/login');
+            }
+         }
       }
    });
+
+   if(localStorage.getItem("username")){
+      loggedUserSvc.setInfo(localStorage.getItem("username"));
+   }
 
 });

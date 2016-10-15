@@ -21,7 +21,7 @@ myApp.controller("toyGameController",function($scope,$timeout){
                   clicked[0].visible = false;
                   clicked[1].visible = false;
                   clicked = [];
-               },700);
+               },500);
             }
 
             if(count === $scope.icons.length){

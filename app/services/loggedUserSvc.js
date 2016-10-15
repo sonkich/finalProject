@@ -10,7 +10,10 @@ myApp.factory("loggedUserSvc", function($http, $httpParamSerializerJQLike,$locat
    }
 
    var clearInfo = function(){
-
+		userInfo.username = '';
+		userInfo.logged = false;
+		userInfo.is_alive = '';
+		$location.path('/login');
    }
 
    var setInfo = function(username){
@@ -27,7 +30,7 @@ myApp.factory("loggedUserSvc", function($http, $httpParamSerializerJQLike,$locat
 	  			userInfo.username = username;
             userInfo.logged = true;
             userInfo.is_alive = (response.data.isAlive)? response.data.isAlive : -1;
-            
+
             $location.path('/users/' + userInfo.username);
 
 
@@ -40,6 +43,7 @@ myApp.factory("loggedUserSvc", function($http, $httpParamSerializerJQLike,$locat
 
 	return {
 		getInfo : getInfo,
-      setInfo : setInfo
+      setInfo : setInfo,
+		clearInfo : clearInfo
 	};
 });
