@@ -1,4 +1,4 @@
-myApp.controller("toyGameController",function($scope,$timeout){
+myApp.controller("toyGameController",function($rootScope,$scope,$timeout,homeSvc){
    $scope.icons = shuffle(iconsList);
 
       var clicked = [];
@@ -25,10 +25,25 @@ myApp.controller("toyGameController",function($scope,$timeout){
             }
 
             if(count === $scope.icons.length){
-               console.log("end game");
+               $rootScope.player.toys_q = parseInt($rootScope.player.toys_q) + 1;
+               $rootScope.player.diamonds = parseInt($rootScope.player.diamonds) + 1;
+               homeSvc.setData($rootScope.baby, $rootScope.player);
+
+               alert("win")
             }
 
 
+         }
+
+
+         $scope.resetData = function(){
+            for(icon in iconsList){
+               iconsList[icon].visible = false;
+
+            }
+
+            clicked = [];
+            count = 0;
          }
 
       };
