@@ -168,6 +168,10 @@ myApp.controller("homeController",function($scope, $rootScope,  $location, $rout
 		}
 	}
 	
+	$scope.openStore = function() {
+		$location.path('/store');
+	}
+	
 	$scope.sleep = function() {
 		if ($scope.playing == false) {
 			$scope.playing = true;

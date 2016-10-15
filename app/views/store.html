@@ -3,24 +3,41 @@
 		<h1>Food Level</h1>
 		<div class="status">
 			<div class="lvl">
-				<div class="img"></div>
-				<h1>Current level: 0</h1>
+				<div class="img" ng-style="{'background': 'url(' + food_c + ') no-repeat center center', 'background-size': '100% 100%'}"></div>
+				<h1>Current level: {{player.food_lvl}}</h1>
 			</div>
 			
 			<div class="lvl">
 				<h1>Next level: <img src="assets/img/diamond.png"/> 50</h1>
-				<button>Buy</button>
+				<button id="buyFood" ng-click="buy($event)">Buy</button>
+				<p>{{errorF}}</p>
 			</div>
 			
 			<div class="lvl">
-				<div class="img"></div>
-				<h1>Next level: 1</h1>
+				<div class="img" ng-style="{'background': 'url(' + food_n + ') no-repeat center center', 'background-size': '100% 100%'}"></div>
+				<h1>Next level: {{nextF}}</h1>
 			</div>
 		</div>
 	</div>
 	<div class="box">
 		<h1>Clothes Level</h1>
-		<div class="status"></div>
+		<div class="status">
+			<div class="lvl">
+				<div class="img" ng-style="{'background': 'url(' + clothes_c + ') no-repeat center center', 'background-size': '100% 100%'}"></div>
+				<h1>Current level: {{player.cloth_lvl}}</h1>
+			</div>
+			
+			<div class="lvl">
+				<h1>Next level: <img src="assets/img/diamond.png"/> 50</h1>
+				<button id="buyClothes" ng-click="buy($event)">Buy</button>
+				<p>{{errorC}}</p>
+			</div>
+			
+			<div class="lvl">
+				<div class="img" ng-style="{'background': 'url(' + clothes_n + ') no-repeat center center', 'background-size': '100% 100%'}"></div>
+				<h1>Next level: {{nextC}}</h1>
+			</div>
+		</div>
 	</div>
-	<button id="close">Close</button>
+	<button id="close" ng-click="close()">Close</button>
 </div>
