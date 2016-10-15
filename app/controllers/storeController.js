@@ -17,26 +17,26 @@ myApp.controller('storeController',function($scope,$location,$rootScope, homeSvc
 	$scope.nextC = parseInt($rootScope.player.cloth_lvl) + 1;
 	
 	$scope.food_c = food[$rootScope.player.food_lvl];
-	$scope.food_n = food[parseInt($rootScope.player.food_lvl) + 1] != 'undefined' ? 
-			food[parseInt($rootScope.player.food_lvl) + 1] : $scope.food_c;
+	$scope.food_n = food[$scope.nextF] != 'undefined' ? food[$scope.nextF] : $scope.food_c;
 	
 	$scope.clothes_c = clothes[$rootScope.player.cloth_lvl];
-	$scope.clothes_n = clothes[parseInt($rootScope.player.cloth_lvl) + 1] != 'undefined' ? 
-			clothes[parseInt($rootScope.player.cloth_lvl) + 1] : $scope.clothes_c;
+	$scope.clothes_n = clothes[$scope.nextC] != 'undefined' ? clothes[$scope.nextC] : $scope.clothes_c;
 	
 	$scope.buy = function(item) {
 		if ($rootScope.player.diamonds >= 50) {
 			$rootScope.player.diamonds = parseInt($rootScope.player.diamonds) - 50;
 			if (item.currentTarget.getAttribute("id") == 'buyFood') {
 				$rootScope.player.food_lvl = parseInt($rootScope.player.food_lvl) + 1;
+				
+				$scope.nextF = parseInt($rootScope.player.food_lvl) + 1;
 				$scope.food_c = food[$rootScope.player.food_lvl];
-				$scope.food_n = food[parseInt($rootScope.player.food_lvl) + 1] != 'undefined' ? 
-						food[parseInt($rootScope.player.food_lvl) + 1] : $scope.food_c;
+				$scope.food_n = food[$scope.nextF] != 'undefined' ? food[$scope.nextF] : $scope.food_c;
 			} else {
 				$rootScope.player.cloth_lvl = parseInt($rootScope.player.cloth_lvl) + 1;
+				
+				$scope.nextC = parseInt($rootScope.player.cloth_lvl) + 1;
 				$scope.clothes_c = clothes[$rootScope.player.cloth_lvl];
-				$scope.clothes_n = clothes[parseInt($rootScope.player.cloth_lvl) + 1] != 'undefined' ? 
-						clothes[parseInt($rootScope.player.cloth_lvl) + 1] : $scope.clothes_c;
+				$scope.clothes_n = clothes[$scope.nextC] != 'undefined' ? clothes[$scope.nextC] : $scope.clothes_c;
 			}
 			homeSvc.setData($rootScope.baby, $rootScope.player);
 		} else {
