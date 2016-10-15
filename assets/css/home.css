@@ -6,7 +6,7 @@
 	margin: 0.5em auto;
 	background: url("../img/room.png") no-repeat center center fixed;
 	background-size: 100% 100%;
-	font-family: 'Arial, Helevetica', sans-serif;
+	font-family: 'Baloo Bhai', cursive;
 	font-weight: bold;
 	border: 2px solid #f6e6b4;
 	border-radius: 5px;
@@ -88,6 +88,37 @@
 	position: relative;
 }
 
+#home #game #status {
+	background-color: rgba(255, 255, 255, 0.6);
+	display: flex;
+   	flex-direction: row;
+   	justify-content: space-between;
+   	border-radius: 5px;
+	padding: 15px;
+	border: 1px solid #f6e6b4;
+   	box-shadow:  0 1px 2px black;
+}
+
+#home #game #status ul li {
+   float: left;
+   margin-right: 15px;
+}
+
+#home #game #status button {
+	border-radius: 5px;
+	box-shadow:  0 1px 2px black;
+	outline: none;
+}
+
+#home #game #sound {
+	background: url("../img/sound_on.png") no-repeat center center;
+	background-size: 100% 100%;
+	width: 20px;
+	height: 20px;
+	margin-left: 2em;
+	cursor: pointer;
+}
+
 #home #game #baby {
   	background: url("../img/girl1.png") no-repeat center center;
 	background-size: 100% 100%;
@@ -145,58 +176,6 @@
 	height: 70px;
 	bottom: 6em;
 	right: 3em;
-	position: absolute;
-	cursor: pointer;
-}
-
-#home #game #status {
-	width: 120px;
-	padding-top: 1em;
-	margin-left: 1em;
-}
-
-#home #game #status h1 {
-	color: white;
-}
-
-#home #game #status .small-label {
-	font-size: 0.8em;
-	color: white;
-}
-
-#home #game #status .small-box {
-	width: 100px;
-	height: 10px;
-	border: 1px solid white;
-	margin-bottom: 0.2em;
-}
-
-#home #game #status .small-box .food, 
-#home #game #status .small-box .drink, 
-#home #game #status .small-box .happy {
-	height: 10px;
-	background-color: rgba(255, 255, 255, 0.6);
-}
-
-#home #game #status .small-box .food {
-	width: 30%;
-}
-
-#home #game #status .small-box .drink {
-	width: 70%;
-}
-
-#home #game #status .small-box .happy {
-	width: 20%;
-}
-
-#home #game #sound {
-	background: url("../img/sound_on.png") no-repeat center center;
-	background-size: 100% 100%;
-	width: 30px;
-	height: 30px;
-	top: 1em;
-	right: 1em;
 	position: absolute;
 	cursor: pointer;
 }

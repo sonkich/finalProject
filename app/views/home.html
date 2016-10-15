@@ -18,6 +18,19 @@
 	</div>
 	
 	<div id="game" ng-hide="show==1">
+		<div id="status">
+			<ul>
+		         <li>Name: {{baby.name}} </li>
+		         <li>Food: {{baby.food}}%</li>
+		         <li>Drink: {{baby.drink}}%</li>
+		         <li>Happiness: {{baby.happiness}}%</li>
+		    </ul>
+		    <ul>
+		         <li><button ng-click="openStore()">Benefits</button></li>
+		         <li><div id="sound" ng-click="soundOnOff()" ng-style="{'background': 'url(' + sound + ') no-repeat center center', 'background-size': '100% 100%'}"></div></li>
+      		</ul>
+		</div>
+		
 		<div id="baby" ng-style="{'background': 'url(' + babyImage + ') no-repeat center center', 'background-size': '100% 100%'}">
 			<img src="assets/img/bottle.jpg" alt="" id="drink" ng-show="bottle==1"/>
 		</div>
@@ -25,24 +38,6 @@
 		<div id="jar" class="puls" ng-click="play($event)"></div>
 		<div id="bear" class="puls" ng-click="play($event)"></div>
 		<div id="pacifier" class="puls" ng-click="sleep()"></div>
-		<div id="status">
-			<h1>Name: {{baby.name}}</h1>
-			<label class="small-label">Food</label>
-			<div class="small-box">
-				<div class="food" ng-style="{'width': baby.food+'%'}"></div>
-			</div>
-			
-			<label class="small-label">Drink</label>
-			<div class="small-box">
-				<div class="drink" ng-style="{'width': baby.drink+'%'}"></div>
-			</div>
-			
-			<label class="small-label">Happiness</label>
-			<div class="small-box">
-				<div class="happy" ng-style="{'width': baby.happiness+'%'}"></div>
-			</div>
-		</div>
 		
-		<div id="sound" ng-click="soundOnOff()" ng-style="{'background': 'url(' + sound + ') no-repeat center center', 'background-size': '100% 100%'}"></div>
 	</div>
 </div>

@@ -28,7 +28,11 @@ myApp.config(function ($routeProvider, $locationProvider) {
          controller: 'toyGameController',
          authenticated: true
       })
-
+      .when('/store',{
+         templateUrl: './app/views/store.html',
+         controller: 'storeController',
+         authenticated: true
+      })
 
       .otherwise({
            template:'<h1>Not found</h1><h2>{{message}}</h2>',
