@@ -1,0 +1,37 @@
+<div class="water-all-wrapper">
+
+
+      <div class="water-wrapper" ng-if="!(bullets == 0)">
+         <div class="water-stats">
+            <div class="points">
+               Points:{{points}}
+            </div>
+            <div class="shots">
+               Shots left:{{bullets}}
+            </div>
+         </div>
+         <div class="water" ng-repeat="water in waterList track by $index" >
+            <div class="water-img" ng-show="water.visible">
+               <img ng-src="{{water.url}}"/>
+            </div>
+            <div class="water-back" ng-show="!water.visible" ng-click="turnVisible($index)">
+            </div>
+         </div>
+      </div>
+      <div class="water-endgame">
+         <div class="water-endgame-text">
+            <h1>You manage to colect {{points}} points and you win
+            {{diamonds}} <img src="assets/img/diamond.png"/>
+             and {{water}} <img src="assets/img/water.png"/></h1>
+         </div>
+         <div class="water-endgame-buttons">
+            <button ng-click="reset()">Play again</button>
+         </div>
+      </div>
+
+      <!-- <div class="water-game-btns">
+         <button ng-click="resetData()">Reset</button>
+      </div> -->
+
+
+</div>
