@@ -30,6 +30,11 @@ myApp.config(function ($routeProvider, $locationProvider) {
          controller: 'toyGameController',
          authenticated: true
       })
+      .when('/games/waterGame',{
+         templateUrl: './app/views/waterGame.html',
+         controller: 'waterGameController',
+         authenticated: true
+      })
       .when('/store',{
          templateUrl: './app/views/store.html',
          controller: 'storeController',
@@ -40,6 +45,7 @@ myApp.config(function ($routeProvider, $locationProvider) {
          controller: 'friendsController',
          authenticated: true
       })
+
 
       .otherwise({
           redirectTo : "/login"

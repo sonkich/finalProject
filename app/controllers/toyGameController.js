@@ -44,6 +44,7 @@ myApp.controller("toyGameController",function($rootScope,$scope,$timeout,homeSvc
 
             clicked = [];
             count = 0;
+            $scope.icons = shuffle(iconsList);
          }
 
       };
