@@ -18,9 +18,9 @@
             </div>
          </div>
       </div>
-      <div class="water-endgame">
+      <div class="water-endgame" ng-if="(bullets == 0)">
          <div class="water-endgame-text">
-            <h1>You manage to colect {{points}} points and you win
+            <h1>You manage to make {{points}} points and you win
             {{diamonds}} <img src="assets/img/diamond.png"/>
              and {{water}} <img src="assets/img/water.png"/></h1>
          </div>
@@ -29,9 +29,7 @@
          </div>
       </div>
 
-      <!-- <div class="water-game-btns">
-         <button ng-click="resetData()">Reset</button>
-      </div> -->
+      
 
 
 </div>
