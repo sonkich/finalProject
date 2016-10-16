@@ -1,23 +1,23 @@
 <div class="login">
    <form class="login-wrapper">
-         <div class="login-data-wrapper">
+         <div class="login-data-wrapper form-group">
             <label>
                Username
-               <input type="text" ng-model="usernameData.username">
+               <input class="form-control" type="text" ng-model="usernameData.username">
             </label>
          </div>
-         <div class="login-data-wrapper">
+         <div class="login-data-wrapper form-group">
             <label>
                Password
-               <input type="password" ng-model="usernameData.password">
+               <input class="form-control" type="password" ng-model="usernameData.password">
             </label>
          </div>
          <div class="error" ng-if="errors">
-            <p>
+            <p class="help-block">
                {{errors}}
             </p>
          </div>
-         <button ng-click="login()" name="button">Login</button>
+         <button class="btn btn-default" ng-click="login()" name="button">Login</button>
          <a href="#/register">Register</a>
 
    </form>

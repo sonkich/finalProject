@@ -3,8 +3,9 @@ myApp.controller("usersController",function(loggedUserSvc,$scope,$http,$location
 
    $scope.data = [];
    getData();
-   $scope.pageSize = 5;
+   $scope.pageSize = 8;
    $scope.currentPage = 1;
+   $scope.searchWord = '';
 
 
    $scope.openProfil = function(index) {

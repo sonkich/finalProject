@@ -1,13 +1,16 @@
 
-<div>
-   <div class="profil" ng-repeat="user in data | startFrom:(currentPage - 1) * pageSize | limitTo: pageSize">
+<div class="users-wrapper">
+   <div class="users-search">
+      <label>Search: <input type="text" class="form-control user-search-box" ng-model="searchWord"></label>
+   </div>
+   <div class="profil" ng-repeat="user in data | filter:searchWord | startFrom:(currentPage - 1) * pageSize | limitTo: pageSize">
 
       <div class="username">
-         {{user.username}}
+         <h2>{{user.username}}</h2>
       </div>
       <div class="buttons">
-         <button ng-click="openProfil($index)">Profil</button>
-         <button ng-click="sendFriendRequest($index)">Add friend</button>
+         <button class="btn btn-default" ng-click="openProfil($index)">Profil</button>
+         <button class="btn btn-default" ng-click="sendFriendRequest($index)">Add friend</button>
       </div>
    </div>
 
