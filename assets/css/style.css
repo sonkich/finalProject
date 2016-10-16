@@ -240,6 +240,23 @@ body {
 	box-shadow: 0 0 3px 2px rgba(0,0,0,0.3);
 }
 
+.register-wrapper {
+	width: 350px;
+	margin: 150px auto;
+	background-color: rgba(255,255,255,0.6);
+	border: 2px solid #f6e6b4;
+	padding: 50px;
+	padding-left: 95px;
+	box-shadow: 0 0 3px 2px rgba(0,0,0,0.3);
+	text-align: center;
+}
+
+.register-wrapper > div {
+	width: 240px;
+	text-align: left;
+
+}
+
 .users-wrapper h2{
 	font-family: 'Baloo Bhai', cursive;
 	font-size: 1.6em;

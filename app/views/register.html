@@ -2,35 +2,35 @@
    <div>
       <label for="">
          Username
-         <input type="text" ng-model="userData.username"></label>
-      <p class="error">
+         <input class="form-control" type="text" ng-model="userData.username"></label>
+      <p class="help-block red">
          {{userData.errors.username}}
       </p>
    </div>
    <div>
       <label for="">
          Email
-         <input type="text" ng-model="userData.email"></label>
-         <p class="error">
+         <input class="form-control" type="text" ng-model="userData.email"></label>
+         <p class="help-block red">
             {{userData.errors.email}}
          </p>
    </div>
    <div>
       <label for="">
          Password
-         <input type="password" ng-model="userData.password"></label>
-         <p class="error">
+         <input class="form-control" type="password" ng-model="userData.password"></label>
+         <p class="help-block red">
             {{userData.errors.password}}
          </p>
    </div>
    <div>
       <label for="">
          Repeat password
-         <input type="password" ng-model="userData.password2"></label>
-         <p class="error">
+         <input class="form-control" type="password" ng-model="userData.password2"></label>
+         <p class="help-block red">
             {{userData.errors.password2}}
          </p>
    </div>
 
-   <button type="button" ng-click="register()">Register</button>
+   <button class="btn btn-default" type="button" ng-click="register()">Register</button>
 </div>
