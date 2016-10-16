@@ -35,6 +35,11 @@ myApp.config(function ($routeProvider, $locationProvider) {
          controller: 'waterGameController',
          authenticated: true
       })
+      .when('/games/foodGame',{
+         templateUrl: './app/views/foodGame.html',
+         controller: 'foodGameController',
+         authenticated: true
+      })
       .when('/store',{
          templateUrl: './app/views/store.html',
          controller: 'storeController',
