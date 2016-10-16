@@ -1,4 +1,4 @@
-myApp.controller("rankController",function(loggedUserSvc,$scope,$http,$location,$rootScope,$httpParamSerializerJQLike){
+myApp.controller("usersController",function(loggedUserSvc,$scope,$http,$location,$rootScope,$httpParamSerializerJQLike){
 
 
    $scope.data = [];

@@ -1,4 +1,309 @@
 myApp.controller("waterGameController",function($scope,$rootScope,homeSvc){
+
+   var waterList = [
+
+      {
+         name : "drop",
+         url : "./assets/img/game2/drop.png",
+         visible : false ,
+         points : 1
+      },
+      {
+         name : "drop",
+         url : "./assets/img/game2/drop.png",
+         visible : false ,
+         points : 1
+      },
+      {
+         name : "drop",
+         url : "./assets/img/game2/drop.png",
+         visible : false ,
+         points : 1
+      },
+      {
+         name : "drop",
+         url : "./assets/img/game2/drop.png",
+         visible : false ,
+         points : 1
+      },
+      {
+         name : "drop",
+         url : "./assets/img/game2/drop.png",
+         visible : false ,
+         points : 1
+      },
+      {
+         name : "drop",
+         url : "./assets/img/game2/drop.png",
+         visible : false ,
+         points : 1
+      },
+      {
+         name : "drop",
+         url : "./assets/img/game2/drop.png",
+         visible : false ,
+         points : 1
+      },
+      {
+         name : "drop",
+         url : "./assets/img/game2/drop.png",
+         visible : false ,
+         points : 1
+      },
+      {
+         name : "drop",
+         url : "./assets/img/game2/drop.png",
+         visible : false ,
+         points : 1
+      },
+      {
+         name : "drop",
+         url : "./assets/img/game2/drop.png",
+         visible : false ,
+         points : 1
+      },
+      {
+         name : "drop",
+         url : "./assets/img/game2/drop.png",
+         visible : false ,
+         points : 1
+      },
+      {
+         name : "drop",
+         url : "./assets/img/game2/drop.png",
+         visible : false ,
+         points : 1
+      },
+      {
+         name : "drop",
+         url : "./assets/img/game2/drop.png",
+         visible : false ,
+         points : 1
+      },
+      {
+         name : "drop",
+         url : "./assets/img/game2/drop.png",
+         visible : false ,
+         points : 1
+      },
+      {
+         name : "drop",
+         url : "./assets/img/game2/drop.png",
+         visible : false ,
+         points : 1
+      },
+      {
+         name : "drop",
+         url : "./assets/img/game2/drop.png",
+         visible : false ,
+         points : 1
+      },
+      {
+         name : "drop",
+         url : "./assets/img/game2/drop.png",
+         visible : false ,
+         points : 1
+      },
+      {
+         name : "drop",
+         url : "./assets/img/game2/drop.png",
+         visible : false ,
+         points : 1
+      },
+      {
+         name : "drop",
+         url : "./assets/img/game2/drop.png",
+         visible : false ,
+         points : 1
+      },
+      {
+         name : "drop",
+         url : "./assets/img/game2/drop.png",
+         visible : false ,
+         points : 1
+      },
+      {
+         name : "drop",
+         url : "./assets/img/game2/drop.png",
+         visible : false ,
+         points : 1
+      },
+      {
+         name : "drop",
+         url : "./assets/img/game2/drop.png",
+         visible : false ,
+         points : 1
+      },
+      {
+         name : "drop",
+         url : "./assets/img/game2/drop.png",
+         visible : false ,
+         points : 1
+      },
+      {
+         name : "drop",
+         url : "./assets/img/game2/drop.png",
+         visible : false ,
+         points : 1
+      },
+      {
+         name : "drop",
+         url : "./assets/img/game2/drop.png",
+         visible : false ,
+         points : 1
+      },
+      {
+         name : "drop",
+         url : "./assets/img/game2/drop.png",
+         visible : false ,
+         points : 1
+      },
+      {
+         name : "drop",
+         url : "./assets/img/game2/drop.png",
+         visible : false ,
+         points : 1
+      },
+      {
+         name : "drop",
+         url : "./assets/img/game2/drop.png",
+         visible : false ,
+         points : 1
+      },
+      {
+         name : "drop",
+         url : "./assets/img/game2/drop.png",
+         visible : false ,
+         points : 1
+      },
+      {
+         name : "drop",
+         url : "./assets/img/game2/drop.png",
+         visible : false ,
+         points : 1
+      },
+      {
+         name : "drop",
+         url : "./assets/img/game2/drop.png",
+         visible : false ,
+         points : 1
+      },
+      {
+         name : "drop",
+         url : "./assets/img/game2/drop.png",
+         visible : false ,
+         points : 1
+      },
+      {
+         name : "drop",
+         url : "./assets/img/game2/drop.png",
+         visible : false ,
+         points : 1
+      },
+      {
+         name : "drop",
+         url : "./assets/img/game2/drop.png",
+         visible : false ,
+         points : 1
+      },
+      {
+         name : "drop",
+         url : "./assets/img/game2/drop.png",
+         visible : false ,
+         points : 1
+      },
+      {
+         name : "drop",
+         url : "./assets/img/game2/drop.png",
+         visible : false ,
+         points : 1
+      },
+      {
+         name : "drop",
+         url : "./assets/img/game2/drop.png",
+         visible : false ,
+         points : 1
+      },
+      {
+         name : "drop",
+         url : "./assets/img/game2/drop.png",
+         visible : false ,
+         points : 1
+      },
+      {
+         name : "water",
+         url : "./assets/img/game2/water.png",
+         visible : false ,
+         points : 10
+      },
+      {
+         name : "water",
+         url : "./assets/img/game2/water.png",
+         visible : false ,
+         points : 10
+      },
+      {
+         name : "water",
+         url : "./assets/img/game2/water.png",
+         visible : false ,
+         points : 10
+      },
+      {
+         name : "water",
+         url : "./assets/img/game2/water.png",
+         visible : false ,
+         points : 10
+      },
+      {
+         name : "water",
+         url : "./assets/img/game2/water.png",
+         visible : false ,
+         points : 10
+      },
+      {
+         name : "water",
+         url : "./assets/img/game2/water.png",
+         visible : false ,
+         points : 10
+      },
+      {
+         name : "water",
+         url : "./assets/img/game2/water.png",
+         visible : false ,
+         points : 10
+      },
+      {
+         name : "water",
+         url : "./assets/img/game2/water.png",
+         visible : false ,
+         points : 10
+      },
+      {
+         name : "water",
+         url : "./assets/img/game2/water.png",
+         visible : false ,
+         points : 10
+      },
+      {
+         name : "water",
+         url : "./assets/img/game2/water.png",
+         visible : false ,
+         points : 10
+      },
+      {
+         name : "max-water",
+         url : "./assets/img/game2/max-water.png",
+         visible : false ,
+         points : 50
+      },
+      {
+         name : "max-water",
+         url : "./assets/img/game2/max-water.png",
+         visible : false ,
+         points : 50
+      }
+   ];
+
    $scope.points = 0;
    $scope.bullets = 10;
    $scope.waterList = shuffle(waterList);
@@ -74,309 +379,3 @@ function shuffle(array) {
 
     return array;
 }
-
-var waterList = [
-
-   {
-      name : "drop",
-      url : "./assets/img/game2/drop.png",
-      visible : false ,
-      points : 1
-   },
-   {
-      name : "drop",
-      url : "./assets/img/game2/drop.png",
-      visible : false ,
-      points : 1
-   },
-   {
-      name : "drop",
-      url : "./assets/img/game2/drop.png",
-      visible : false ,
-      points : 1
-   },
-   {
-      name : "drop",
-      url : "./assets/img/game2/drop.png",
-      visible : false ,
-      points : 1
-   },
-   {
-      name : "drop",
-      url : "./assets/img/game2/drop.png",
-      visible : false ,
-      points : 1
-   },
-   {
-      name : "drop",
-      url : "./assets/img/game2/drop.png",
-      visible : false ,
-      points : 1
-   },
-   {
-      name : "drop",
-      url : "./assets/img/game2/drop.png",
-      visible : false ,
-      points : 1
-   },
-   {
-      name : "drop",
-      url : "./assets/img/game2/drop.png",
-      visible : false ,
-      points : 1
-   },
-   {
-      name : "drop",
-      url : "./assets/img/game2/drop.png",
-      visible : false ,
-      points : 1
-   },
-   {
-      name : "drop",
-      url : "./assets/img/game2/drop.png",
-      visible : false ,
-      points : 1
-   },
-   {
-      name : "drop",
-      url : "./assets/img/game2/drop.png",
-      visible : false ,
-      points : 1
-   },
-   {
-      name : "drop",
-      url : "./assets/img/game2/drop.png",
-      visible : false ,
-      points : 1
-   },
-   {
-      name : "drop",
-      url : "./assets/img/game2/drop.png",
-      visible : false ,
-      points : 1
-   },
-   {
-      name : "drop",
-      url : "./assets/img/game2/drop.png",
-      visible : false ,
-      points : 1
-   },
-   {
-      name : "drop",
-      url : "./assets/img/game2/drop.png",
-      visible : false ,
-      points : 1
-   },
-   {
-      name : "drop",
-      url : "./assets/img/game2/drop.png",
-      visible : false ,
-      points : 1
-   },
-   {
-      name : "drop",
-      url : "./assets/img/game2/drop.png",
-      visible : false ,
-      points : 1
-   },
-   {
-      name : "drop",
-      url : "./assets/img/game2/drop.png",
-      visible : false ,
-      points : 1
-   },
-   {
-      name : "drop",
-      url : "./assets/img/game2/drop.png",
-      visible : false ,
-      points : 1
-   },
-   {
-      name : "drop",
-      url : "./assets/img/game2/drop.png",
-      visible : false ,
-      points : 1
-   },
-   {
-      name : "drop",
-      url : "./assets/img/game2/drop.png",
-      visible : false ,
-      points : 1
-   },
-   {
-      name : "drop",
-      url : "./assets/img/game2/drop.png",
-      visible : false ,
-      points : 1
-   },
-   {
-      name : "drop",
-      url : "./assets/img/game2/drop.png",
-      visible : false ,
-      points : 1
-   },
-   {
-      name : "drop",
-      url : "./assets/img/game2/drop.png",
-      visible : false ,
-      points : 1
-   },
-   {
-      name : "drop",
-      url : "./assets/img/game2/drop.png",
-      visible : false ,
-      points : 1
-   },
-   {
-      name : "drop",
-      url : "./assets/img/game2/drop.png",
-      visible : false ,
-      points : 1
-   },
-   {
-      name : "drop",
-      url : "./assets/img/game2/drop.png",
-      visible : false ,
-      points : 1
-   },
-   {
-      name : "drop",
-      url : "./assets/img/game2/drop.png",
-      visible : false ,
-      points : 1
-   },
-   {
-      name : "drop",
-      url : "./assets/img/game2/drop.png",
-      visible : false ,
-      points : 1
-   },
-   {
-      name : "drop",
-      url : "./assets/img/game2/drop.png",
-      visible : false ,
-      points : 1
-   },
-   {
-      name : "drop",
-      url : "./assets/img/game2/drop.png",
-      visible : false ,
-      points : 1
-   },
-   {
-      name : "drop",
-      url : "./assets/img/game2/drop.png",
-      visible : false ,
-      points : 1
-   },
-   {
-      name : "drop",
-      url : "./assets/img/game2/drop.png",
-      visible : false ,
-      points : 1
-   },
-   {
-      name : "drop",
-      url : "./assets/img/game2/drop.png",
-      visible : false ,
-      points : 1
-   },
-   {
-      name : "drop",
-      url : "./assets/img/game2/drop.png",
-      visible : false ,
-      points : 1
-   },
-   {
-      name : "drop",
-      url : "./assets/img/game2/drop.png",
-      visible : false ,
-      points : 1
-   },
-   {
-      name : "drop",
-      url : "./assets/img/game2/drop.png",
-      visible : false ,
-      points : 1
-   },
-   {
-      name : "drop",
-      url : "./assets/img/game2/drop.png",
-      visible : false ,
-      points : 1
-   },
-   {
-      name : "water",
-      url : "./assets/img/game2/water.png",
-      visible : false ,
-      points : 10
-   },
-   {
-      name : "water",
-      url : "./assets/img/game2/water.png",
-      visible : false ,
-      points : 10
-   },
-   {
-      name : "water",
-      url : "./assets/img/game2/water.png",
-      visible : false ,
-      points : 10
-   },
-   {
-      name : "water",
-      url : "./assets/img/game2/water.png",
-      visible : false ,
-      points : 10
-   },
-   {
-      name : "water",
-      url : "./assets/img/game2/water.png",
-      visible : false ,
-      points : 10
-   },
-   {
-      name : "water",
-      url : "./assets/img/game2/water.png",
-      visible : false ,
-      points : 10
-   },
-   {
-      name : "water",
-      url : "./assets/img/game2/water.png",
-      visible : false ,
-      points : 10
-   },
-   {
-      name : "water",
-      url : "./assets/img/game2/water.png",
-      visible : false ,
-      points : 10
-   },
-   {
-      name : "water",
-      url : "./assets/img/game2/water.png",
-      visible : false ,
-      points : 10
-   },
-   {
-      name : "water",
-      url : "./assets/img/game2/water.png",
-      visible : false ,
-      points : 10
-   },
-   {
-      name : "max-water",
-      url : "./assets/img/game2/max-water.png",
-      visible : false ,
-      points : 50
-   },
-   {
-      name : "max-water",
-      url : "./assets/img/game2/max-water.png",
-      visible : false ,
-      points : 50
-   }
-
-
-];

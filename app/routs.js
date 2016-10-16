@@ -20,9 +20,14 @@ myApp.config(function ($routeProvider, $locationProvider) {
          controller: 'registerController',
          authenticated: false
       })
+      .when('/users',{
+         templateUrl: './app/views/users.html',
+         controller: 'usersController',
+         authenticated: true
+      })
       .when('/ranking',{
          templateUrl: './app/views/ranking.html',
-         controller: 'rankController',
+         controller: 'rankingController',
          authenticated: true
       })
       .when('/games/toyGame',{
