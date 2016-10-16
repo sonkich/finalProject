@@ -8,6 +8,11 @@ body {
    margin: 0 auto;
 }
 
+.myGrid {
+	 width: 100%;
+	 height: 700px;
+}
+
 .red {
 	color: #FF5F49;
 }
