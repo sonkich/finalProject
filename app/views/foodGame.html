@@ -1,7 +1,40 @@
 <div id="foodGame">
 	<div id="model">
-		<div class="card" class="card1"></div>
-		<div class="card" id="2"></div>
-		<div class="card" id="3"></div>
+		<div class="card" id="food1" ng-click="loadIngredients($event)">
+			<img ng-show="ready1" src="assets/img/game3/check.png"/>
+		</div>
+		<div class="card" id="food2" ng-click="loadIngredients($event)">
+			<img ng-show="ready2" src="assets/img/game3/check.png"/>
+		</div>
+		<div class="card" id="food3" ng-click="loadIngredients($event)">
+			<img ng-show="ready3" src="assets/img/game3/check.png"/>
+		</div>
 	</div>
+	<h1>Cooking game</h1>
+	
+	<div id="cook">
+		<h2>Ingredients</h2>
+		<div id="inBox">
+			<div class="card" id="ingr1" ng-style="{'background': 'url(' + ingr1 + ') no-repeat center center', 'background-size': '100% 100%'}">
+				<img ng-show="ch1" src="assets/img/game3/check.png"/>
+			</div>
+			<div class="card" id="ingr2" ng-style="{'background': 'url(' + ingr2 + ') no-repeat center center', 'background-size': '100% 100%'}">
+				<img ng-show="ch2" src="assets/img/game3/check.png"/>
+			</div>
+			<div class="card" id="ingr3" ng-style="{'background': 'url(' + ingr3 + ') no-repeat center center', 'background-size': '100% 100%'}">
+				<img ng-show="ch3" src="assets/img/game3/check.png"/>
+			</div>
+		</div>
+	</div>
+	
+	<h2>Find ingredients: {{trys}} trys</h2>
+	<button ng-click="resetData()">Reset</button>
+	<div class="ingr-wrapper">
+        <div class="food" ng-repeat="food in foods track by $index" >
+           <div class="food-img" ng-show="food.visible" ng-click="turnVisible($index)">
+              <img ng-src="{{food.url}}"/>
+           </div>
+           <div class="food-back" ng-show="!food.visible" ng-click="turnVisible($index)"></div>
+         </div>
+      </div>
 </div>

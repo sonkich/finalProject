@@ -16,9 +16,10 @@
 #foodGame #model {
 	width: 35%;
 	height: 18%;
+	display:inline-block;
 }
 
-#foodGame #model .card {
+#foodGame .card {
 	width: 30%;
 	height: 100%;
 	border: 1px solid black;
@@ -28,16 +29,101 @@
 	margin-left: 0.6em;
 }
 
-.card1 {
-	background-color: green;
+#food1 {
+	background: url("../img/game3/salad.jpg") no-repeat center center;
+	background-size: 100% 100%;
+	cursor: pointer;
 }
 
-#foodGame #model .card #2 {
-	background: url("../img/soupe.png") no-repeat center center fixed;
+#food2 {
+	background: url("../img/game3/soupe.png") no-repeat center center;
 	background-size: 100% 100%;
+	cursor: pointer;
 }
 
-#foodGame #model .card #3 {
-	background: url("../img/food_lvl/f_10.png") no-repeat center center fixed;
+#food3 {
+	background: url("../img/food_lvl/f_10.png") no-repeat center center;
 	background-size: 100% 100%;
+	cursor: pointer;
+}
+
+#foodGame h1 {
+	float: right;
+	font-size: 1.5em;
+}
+
+#foodGame #cook {
+	width: 45%;
+	height: 40%;
+	margin: 2em auto;
+	border: 1px solid black;
+	border-radius: 5px;
+	box-shadow:  0 1px 2px black;
+}
+
+#foodGame #cook h2 {
+	margin-top: 1em;
+	margin-left: 1em;
+}
+
+#inBox {
+	width: 80%;
+	height: 60%;
+	margin: 1em auto;
+}
+
+.ingr-wrapper {
+   width: 75%;
+   margin: 0 auto;
+   display: inline-block;
+   display:flex;		
+   align-items:center;
+}
+.food-img {
+   width: 100%;
+   height: 80px;
+   border-radius: 5px;
+   background-color: #fff;
+   position: absolute;
+   top: 0;
+   left: 0;
+   border: 1px solid #6a1b9a;
+   box-shadow:  0 1px 2px black;
+   padding: 0.3em;
+   transition: all linear 0.5s;
+   /*transform: perspective( 600px ) rotateY(0deg);
+   backface-visibility: hidden;*/
+
+}
+
+.food-img img {
+	width: 100%;
+   z-index: 1;
+}
+
+.food-back {
+
+   transition: all linear 0.5s;
+   width: 100%;
+   height: 80px;
+   border: 1px solid #6a1b9a;
+   box-shadow:  0 1px 2px black;
+   border-radius: 5px;
+   background: #ab47bc; /* Old browsers */
+   background: -moz-linear-gradient(top, #f3e5f5 0%, #ab47bc 100%); /* FF3.6-15 */
+   background: -webkit-linear-gradient(top, #f3e5f5 0%,#ab47bc 100%); /* Chrome10-25,Safari5.1-6 */
+   background: linear-gradient(to bottom, #f3e5f5 0%,#ab47bc 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+.food {
+   width: 20%;
+   height: 80px;
+   float: left;
+   margin: 5px;
+   position: relative;
+   cursor: pointer;
+
+}
+
+#foodGame button {
+	
 }
