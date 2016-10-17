@@ -1,6 +1,6 @@
 myApp.controller('mainController',function($scope,$location,$rootScope,loggedUserSvc){
 
-	$scope.parent = localStorage.getItem("username");
+	
 
 	$scope.logout = function() {
 	 	localStorage.removeItem("username");

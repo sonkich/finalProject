@@ -14,6 +14,7 @@ myApp.factory("loggedUserSvc", function($http, $httpParamSerializerJQLike,$locat
 		userInfo.logged = false;
 		userInfo.is_alive = '';
 		$location.path('/login');
+		
    }
 
    var setInfo = function(username){

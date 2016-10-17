@@ -1,6 +1,7 @@
-myApp.controller("homeController",function($scope, $rootScope,  $location, $route, $routeParams, 
+myApp.controller("homeController",function($scope, $rootScope,  $location, $route, $routeParams,
 		$http, $httpParamSerializerJQLike, homeSvc, loggedUserSvc, $timeout){
-	
+
+	$rootScope.parent = loggedUserSvc.getInfo().username;
 	$scope.error = '';
 	$scope.babyName = '';
 	$rootScope.baby = {};
@@ -13,7 +14,7 @@ myApp.controller("homeController",function($scope, $rootScope,  $location, $rout
 	var userInfo = loggedUserSvc.getInfo();
 
 	function loadGame() {
-		
+
 		if (userInfo.logged == false) {
 			$location.path('/login');
 		} else {
@@ -30,7 +31,7 @@ myApp.controller("homeController",function($scope, $rootScope,  $location, $rout
 				var user = {
 						'username': localStorage.getItem("username")
 				}
-				
+
 				var parent = {
 						'username': $routeParams.user
 				}
@@ -51,20 +52,20 @@ myApp.controller("homeController",function($scope, $rootScope,  $location, $rout
 						}
 					})
 				})
-				
+
 			}
 		}
 	}
 	loadGame();
 	updateFriends();
-	
+
 	$scope.createBaby = function(item) {
 		if ($scope.babyName == '') {
 			$scope.error = '  * Enter name';
 		} else {
 			$scope.error = '';
 			var gender = '';
-			
+
 			if (item.currentTarget.getAttribute("id") == 'boy') {
 				gender = 'm';
 				$scope.babyImage = './assets/img/boy1.png'
@@ -81,7 +82,7 @@ myApp.controller("homeController",function($scope, $rootScope,  $location, $rout
 				'happiness': 1,
 				'is_alive': 1,
 			}
-			
+
 			if (userInfo.is_alive == -1) {
 				homeSvc.saveNewBaby($rootScope.baby);
 			} else {
@@ -97,13 +98,13 @@ myApp.controller("homeController",function($scope, $rootScope,  $location, $rout
 				}
 				homeSvc.setData($rootScope.baby, $rootScope.player);
 			}
-			
-			
+
+
 			userInfo.is_alive = 1;
 			$scope.show = 2;
 		}
 	}
-	
+
 	$scope.play = function(item) {
 		if ($routeParams.user == localStorage.getItem("username") || isFriend()) {
 			if (loggedUserSvc.getInfo().is_alive == 0) {
@@ -121,11 +122,11 @@ myApp.controller("homeController",function($scope, $rootScope,  $location, $rout
 									$rootScope.baby.drink = parseInt($rootScope.baby.drink) + 5;
 								}
 								$rootScope.player.drink_q -= 1;
-								
+
 								$rootScope.player.points = parseInt($rootScope.player.points) + 1;
 								homeSvc.setData($rootScope.baby, $rootScope.player);
 								if ($rootScope.baby.gender == 'm') {
-									imageChange('./assets/img/boy_drink.png', './assets/img/boy1.png', 3000); 
+									imageChange('./assets/img/boy_drink.png', './assets/img/boy1.png', 3000);
 								} else {
 									imageChange('./assets/img/girl_drink.png', './assets/img/girl1.png', 3000);
 									$scope.bottle = 1;
@@ -147,13 +148,13 @@ myApp.controller("homeController",function($scope, $rootScope,  $location, $rout
 									$rootScope.baby.food = parseInt($rootScope.baby.food) + 1 + parseInt($rootScope.player.food_lvl);
 								}
 								$rootScope.player.food_q -= 1;
-								
+
 								$rootScope.player.points = parseInt($rootScope.player.points) + 1 + parseInt($rootScope.player.food_lvl);
 								homeSvc.setData($rootScope.baby, $rootScope.player);
 								if ($rootScope.baby.gender == 'm') {
-									imageChange('./assets/img/boy_eat.png', './assets/img/boy1.png', 3000); 
+									imageChange('./assets/img/boy_eat.png', './assets/img/boy1.png', 3000);
 								} else {
-									imageChange('./assets/img/girl_eat.png', './assets/img/girl1.png', 3000) 
+									imageChange('./assets/img/girl_eat.png', './assets/img/girl1.png', 3000)
 								}
 							} else {
 								console.log('full');
@@ -169,13 +170,13 @@ myApp.controller("homeController",function($scope, $rootScope,  $location, $rout
 									$rootScope.baby.happiness = parseInt($rootScope.baby.happiness) + 1 + parseInt($rootScope.player.cloth_lvl);
 								}
 								$rootScope.player.toys_q -= 1;
-								
+
 								$rootScope.player.points = parseInt($rootScope.player.points) + 1 + parseInt($rootScope.player.cloth_lvl);
 								homeSvc.setData($rootScope.baby, $rootScope.player);
 								if ($rootScope.baby.gender == 'm') {
-									imageChange('./assets/img/boy_play.png', './assets/img/boy1.png', 3000); 
+									imageChange('./assets/img/boy_play.png', './assets/img/boy1.png', 3000);
 								} else {
-									imageChange('./assets/img/girl_play.png', './assets/img/girl1.png', 3000) 
+									imageChange('./assets/img/girl_play.png', './assets/img/girl1.png', 3000)
 								}
 							} else {
 								console.log('full');
@@ -186,25 +187,25 @@ myApp.controller("homeController",function($scope, $rootScope,  $location, $rout
 			}
 		}
 	}
-	
+
 	$scope.openStore = function() {
 		if ($routeParams.user == localStorage.getItem("username")) {
 			$location.path('/store');
 		}
 	}
-	
+
 	$scope.sleep = function() {
 		if ($scope.playing == false) {
 			$scope.playing = true;
 			playAudio('./assets/sounds/sleep1.mp3');
 			if ($rootScope.baby.gender == 'm') {
-				imageChange('./assets/img/boy_sleep.png', './assets/img/boy1.png', 14000); 
+				imageChange('./assets/img/boy_sleep.png', './assets/img/boy1.png', 14000);
 			} else {
-				imageChange('./assets/img/girl_sleep.png', './assets/img/girl1.png', 14000) 
+				imageChange('./assets/img/girl_sleep.png', './assets/img/girl1.png', 14000)
 			}
 		}
 	}
-	
+
 	$scope.soundOnOff = function() {
 		if (audio.muted) {
 			audio.muted = false;
@@ -214,20 +215,20 @@ myApp.controller("homeController",function($scope, $rootScope,  $location, $rout
 			$scope.sound = './assets/img/sound_off.png'
 		}
 	}
-	
+
 	function imageChange(url1, url2, time) {
 		$scope.babyImage = url1;
 		$timeout(function() {
 			$scope.babyImage = url2;
 			$scope.playing = false;
-		}, time); 
+		}, time);
 	}
-	
+
 	function playAudio(u) {
 		audio.src = u;
 		audio.play();
 	}
-	
+
 	function updateFriends(){
 	      var data = {
 	         "username" : loggedUserSvc.getInfo().username
@@ -244,7 +245,7 @@ myApp.controller("homeController",function($scope, $rootScope,  $location, $rout
 	            console.log("ERROR");
 	         });
 	}
-	
+
 	function isFriend() {
 		for (var i = 0; i < $scope.friends.length; i++) {
 			if ($routeParams.user == $scope.friends[i].username2) {
