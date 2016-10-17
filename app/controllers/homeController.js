@@ -133,6 +133,8 @@ myApp.controller("homeController",function($scope, $rootScope,  $location, $rout
 										$scope.bottle = 0;
 									}, 3000);
 								}
+							} else {
+								console.log("full");
 							}
 						}
 					} else if(item.currentTarget.getAttribute("id") == 'jar') {
@@ -153,6 +155,8 @@ myApp.controller("homeController",function($scope, $rootScope,  $location, $rout
 								} else {
 									imageChange('./assets/img/girl_eat.png', './assets/img/girl1.png', 3000) 
 								}
+							} else {
+								console.log('full');
 							}
 						}
 					} else {
@@ -173,6 +177,8 @@ myApp.controller("homeController",function($scope, $rootScope,  $location, $rout
 								} else {
 									imageChange('./assets/img/girl_play.png', './assets/img/girl1.png', 3000) 
 								}
+							} else {
+								console.log('full');
 							}
 						}
 					}
