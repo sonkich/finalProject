@@ -116,7 +116,7 @@ myApp.controller("homeController",function($scope, $rootScope,  $location, $rout
 						if ($rootScope.player.drink_q > 0){
 							if ($rootScope.baby.drink < 100) {
 								playAudio('./assets/sounds/eat.mp3');
-								if (parseInt($rootScope.baby.drink) + 5 > 100) {
+								if (parseInt($rootScope.baby.drink) + 5 >= 100) {
 									$rootScope.baby.drink = 100;
 								} else {
 									$rootScope.baby.drink = parseInt($rootScope.baby.drink) + 5;
@@ -135,6 +135,7 @@ myApp.controller("homeController",function($scope, $rootScope,  $location, $rout
 									}, 3000);
 								}
 							} else {
+								$scope.playing = false;
 								console.log("full");
 							}
 						}
@@ -142,7 +143,7 @@ myApp.controller("homeController",function($scope, $rootScope,  $location, $rout
 						if ($rootScope.player.food_q > 0){
 							if ($rootScope.baby.food < 100) {
 								playAudio('./assets/sounds/eat.mp3');
-								if (parseInt($rootScope.baby.food) + 1 + parseInt($rootScope.player.food_lvl) > 100) {
+								if (parseInt($rootScope.baby.food) + 1 + parseInt($rootScope.player.food_lvl) >= 100) {
 									$rootScope.baby.food = 100;
 								} else {
 									$rootScope.baby.food = parseInt($rootScope.baby.food) + 1 + parseInt($rootScope.player.food_lvl);
@@ -157,6 +158,7 @@ myApp.controller("homeController",function($scope, $rootScope,  $location, $rout
 									imageChange('./assets/img/girl_eat.png', './assets/img/girl1.png', 3000)
 								}
 							} else {
+								$scope.playing = false;
 								console.log('full');
 							}
 						}
@@ -164,7 +166,7 @@ myApp.controller("homeController",function($scope, $rootScope,  $location, $rout
 						if ($rootScope.player.toys_q > 0){
 							if ($rootScope.baby.happiness < 100) {
 								playAudio('./assets/sounds/laugh.mp3');
-								if (parseInt($rootScope.baby.happiness) + 1 + parseInt($rootScope.player.cloth_lvl) > 100) {
+								if (parseInt($rootScope.baby.happiness) + 1 + parseInt($rootScope.player.cloth_lvl) >= 100) {
 									$rootScope.baby.happiness = 100;
 								} else {
 									$rootScope.baby.happiness = parseInt($rootScope.baby.happiness) + 1 + parseInt($rootScope.player.cloth_lvl);
@@ -179,6 +181,7 @@ myApp.controller("homeController",function($scope, $rootScope,  $location, $rout
 									imageChange('./assets/img/girl_play.png', './assets/img/girl1.png', 3000)
 								}
 							} else {
+								$scope.playing = false;
 								console.log('full');
 							}
 						}

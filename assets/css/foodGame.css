@@ -89,15 +89,14 @@
    left: 0;
    border: 1px solid #6a1b9a;
    box-shadow:  0 1px 2px black;
-   padding: 0.3em;
+   display: flex;
+   align-items: center;
+   justify-content: center;
    transition: all linear 0.5s;
-   /*transform: perspective( 600px ) rotateY(0deg);
-   backface-visibility: hidden;*/
-
 }
 
 .food-img img {
-	width: 100%;
+	width: 70%;
    	z-index: 1;
 }
 
