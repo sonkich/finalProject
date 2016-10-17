@@ -1,27 +1,35 @@
 <div class="friends-wrapper">
    <div class="friends-requests">
-      <div class="no-friends-requests" ng-if="requests.length == 0">
+      <div class="no-friends-requests empty-friend-box baby-box" ng-if="requests.length == 0">
          <h1>You don't have friend requests</h1>
       </div>
-      <div class="friend-request" ng-repeat="request in requests">
-         <div class="request-username">
-            {{request.sender}}
-         </div>
-         <div class="request-buttons">
-            <button ng-click="accept($index)">Acept</button><button ng-click="reject($index)">Reject</button>
+      <div class="friend-panel">
+         <div class="friend-request baby-box" ng-repeat="request in requests">
+            <div class="friend-logo">
+               <img src="./assets/img/logo.png"/>
+            </div>
+            <div class="request-username">
+               {{request.sender}}
+            </div>
+            <div class="request-buttons">
+               <button ng-click="accept($index)" class="btn btn-info">Acept</button><button class="btn btn-danger" ng-click="reject($index)">Reject</button>
+            </div>
          </div>
       </div>
    </div>
    <hr>
-   <div class="no-friends" ng-if="friends.length == 0">
+   <div class="no-friends empty-friend-box baby-box" ng-if="friends.length == 0">
       <h1>Your friend list is empty</h1>
    </div>
-   <div class="friends-list" ng-repeat="friend in friends">
-      <div class="friend-username">
-         {{friend.username2}}
-      </div>
-      <div class="friend-buttons">
-         <button ng-click="viewProfil($index)">Profil</button><button ng-click="removeFriend($index)">Remove</button>
+   <div class="friend-panel">
+
+      <div class="friends-list baby-box" ng-repeat="friend in friends">
+         <div class="friend-username">
+            {{friend.username2}}
+         </div>
+         <div class="friend-buttons">
+            <button ng-click="viewProfil($index)" class="btn btn-warning">Profil</button><button ng-click="removeFriend($index)" class="btn btn-danger">Remove</button>
+         </div>
       </div>
    </div>
 </div>
