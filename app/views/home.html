@@ -34,10 +34,19 @@
 		<div id="baby" ng-style="{'background': 'url(' + babyImage + ') no-repeat center center', 'background-size': '100% 100%'}">
 			<img src="assets/img/bottle.jpg" alt="" id="drink" ng-show="bottle==1"/>
 		</div>
-		<div id="bottle" class="puls" ng-click="play($event)"></div>
-		<div id="jar" class="puls" ng-click="play($event)"></div>
-		<div id="bear" class="puls" ng-click="play($event)"></div>
-		<div id="pacifier" class="puls" ng-click="sleep()"></div>
+		
+		<div id="bottle" class="bubble puls" ng-click="play($event)">
+			<img src="./assets/img/jar.png" alt="" />
+		</div>
+		<div id="jar" class="bubble puls" ng-click="play($event)">
+			<img src="./assets/img/bottle.jpg" alt="" />
+		</div>
+		<div id="bear" class="bubble puls" ng-click="play($event)">
+			<img src="./assets/img/bear.png" alt="" />
+		</div>
+		<div id="pacifier" class="bubble puls" ng-click="sleep()">
+			<img src="./assets/img/pacifier.png" alt="" />
+		</div>
 		
 	</div>
 </div>

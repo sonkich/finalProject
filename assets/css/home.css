@@ -136,47 +136,22 @@
 	margin-left: 6em;
 }
 
-#home #game #bottle {
-  	background: url("../img/bottle.jpg") no-repeat center center;
-	background-size: 100% 100%;
-	width: 50px;
-	height: 100px;
-	bottom: 14.7em;
-	position: absolute;
-	cursor: pointer;
-}
-
-#home #game #jar {
-  	background: url("../img/jar.png") no-repeat center center;
-	background-size: 100% 100%;
-	width: 50px;
-	height: 50px;
-	bottom: 14.7em;
-	left: 2.5em;
-	position: absolute;
-	cursor: pointer;
-}
-
-#home #game #bear {
-  	background: url("../img/bear.png") no-repeat center center;
+.bubble {
+  	background: rgba(255, 255, 255, 0.6) no-repeat center center;
 	background-size: 100% 100%;
 	width: 100px;
-	height: 150px;
-	bottom: 7em;
-	left: 46em;
-	position: absolute;
+	height: 100px;
 	cursor: pointer;
+	margin: 1em;
+	border-radius: 100px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
-  
-#home #game #pacifier {
-  	background: url("../img/pacifier.png") no-repeat center center;
-	background-size: 100% 100%;
-	width: 70px;
-	height: 70px;
-	bottom: 6em;
-	right: 3em;
-	position: absolute;
-	cursor: pointer;
+
+.bubble img {
+	width: 60%;
+   	z-index: 1;
 }
 
 @-webkit-keyframes puls {
@@ -205,31 +180,11 @@
 	#home #game #baby  {
 		left: 16em;
 	}
-	
-	#home #game #bear {
-		left: 38em;
-	}
 }
 
 @media all and (max-width: 900px) {
 	#home #game #baby  {
 		left: 6em;
-	}
-	
-	#home #game #bear {
-		left: 29em;
-	}
-	
-	#home #game #bottle {
-		left: 0em;
-	}
-	
-	#home #game #jar {
-		left: 3em;
-	}
-	
-	#home #game #pacifier {
-		right: 0em;
 	}
 }
 
@@ -237,54 +192,10 @@
 	#home #game #baby  {
 		bottom: 5em;
 	}
-	
-	#home #game #bear {
-		bottom: 10em;
-	}
-	#home #game #bottle {
-		bottom: 19.5em;
-	}
-	
-	#home #game #jar {
-		bottom: 19.3em;
-	}
 }
 
 @media all and (min-height: 1000px) {
 	#home #game #baby  {
 		bottom: 10em;
 	}
-	
-	#home #game #bear {
-		bottom: 15em;
-	}
-	#home #game #bottle {
-		bottom: 25.8em;
-	}
-	
-	#home #game #jar {
-		bottom: 25.6em;
-	}
-}
-
-
-
-.button {
-  display: inline-block;
-  padding: 0.5em 1em;
-  text-align: center;
-  border: 1px solid #dddddd;
-  box-shadow: 1px 1px #000000;
-  background-color: rgba(1,166,198,0.3);
-  color: #01A6C6;
-  text-shadow: 1px 1px #000000;
-  -webkit-border-radius: 30px;
-  -moz-border-radius: 30px;
-  -ms-border-radius: 30px;
-  border-radius: 30px; 
-  outline: none;
-  font-weight: bold;
-  width: 20%;
-  margin-top: 2em;
-  cursor:pointer;
 }
