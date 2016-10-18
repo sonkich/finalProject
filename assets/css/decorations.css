@@ -1,6 +1,6 @@
 @CHARSET "UTF-8";
 
-#moon {
+.moon {
 	position: absolute;
 	width: 200px;
 	height: 200px;
@@ -11,7 +11,7 @@
     transform: rotate(-20deg);
 }
 
-#title {
+.title {
 	position: absolute;
 	width: 200px;
 	height: 100px;
@@ -89,4 +89,150 @@
 
 .blink_me {
   animation: blinker 2s linear infinite;
+}
+
+#clothes {
+	position: absolute;
+	width: 400px;
+	height: 300px;
+	top: 10em;
+	right: 3em;
+	-ms-transform: rotate(-50deg); /* IE 9 */
+    -webkit-transform: rotate(-50deg); /* Safari */
+    transform: rotate(-50deg);
+    overflow: hidden;
+}
+
+#jump {
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	top: 5em;
+	right: 10em;
+	-ms-transform: rotate(40deg); /* IE 9 */
+    -webkit-transform: rotate(40deg); /* Safari */
+    transform: rotate(40deg);
+    overflow: hidden;
+}
+
+#horse {
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	top: 15em;
+	left: 0em;
+	-ms-transform: rotate(-30deg); /* IE 9 */
+    -webkit-transform: rotate(-30deg); /* Safari */
+    transform: rotate(-30deg);
+    overflow: hidden;
+}
+
+#bath {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	bottom: 3em;
+	left: 35em;
+	-ms-transform: rotate(-10deg); /* IE 9 */
+    -webkit-transform: rotate(-10deg); /* Safari */
+    transform: rotate(-10deg);
+    overflow: hidden;
+}
+
+#down {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	bottom: 5em;
+	right: 5em;
+	-ms-transform: rotate(-10deg); /* IE 9 */
+    -webkit-transform: rotate(-10deg); /* Safari */
+    transform: rotate(-10deg);
+    overflow: hidden;
+}
+
+#juce {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	top: 8em;
+	left: 18em;
+	-ms-transform: rotate(10deg); /* IE 9 */
+    -webkit-transform: rotate(10deg); /* Safari */
+    transform: rotate(10deg);
+    overflow: hidden;
+}
+
+@media all and (max-width: 1050px) {
+	#jump {
+		top: 5em;
+		right: 4em;
+	}
+	
+	#horse {
+		top: 10em;
+		left: 0em;
+	}
+	
+	#bath {
+		bottom: 10em;
+		left: 20em;
+	}
+	
+	#down {
+		bottom: 13em;
+		right: 10em;
+	}
+	
+	#juce {
+		display: none;
+	}
+}
+
+@media all and (max-width: 820px) {
+	#jump {
+		top: 5em;
+		right: 0em;
+		width: 250px;
+		height: 250px;
+	}
+	
+	#horse {
+		display: none;
+	}
+	
+	#bath {
+		top: 15em;
+		left: 2em;
+	}
+	
+	#down {
+		display: none;
+	}
+}
+
+@media all and (max-width: 620px) {
+	#jump {
+		top: 5em;
+		right: 0em;
+		width: 250px;
+		height: 250px;
+		-ms-transform: rotate(10deg); /* IE 9 */
+	    -webkit-transform: rotate(-10deg); /* Safari */
+	    transform: rotate(-10deg);
+	}
+
+	#bath {
+		top: 25em;
+	}
+}
+
+@media all and (max-width: 500px) {
+	#jump {
+		display: none;
+	}
+
+	#bath {
+		display: none;
+	}
 }

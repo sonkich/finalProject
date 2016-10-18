@@ -227,3 +227,57 @@
   -webkit-animation-duration: 1.5s; 
   -webkit-animation-iteration-count: infinite; 
 }
+
+@media all and (max-width: 1050px) {
+	#baby {
+		margin-top: 10em;
+	}
+}
+
+@media all and (max-width: 820px) {
+	#jump {
+		top: 5em;
+		right: 0em;
+		width: 250px;
+		height: 250px;
+	}
+	
+	#horse {
+		display: none;
+	}
+	
+	#bath {
+		top: 15em;
+		left: 2em;
+	}
+	
+	#down {
+		display: none;
+	}
+}
+
+@media all and (max-width: 620px) {
+	#jump {
+		top: 5em;
+		right: 0em;
+		width: 250px;
+		height: 250px;
+		-ms-transform: rotate(10deg); /* IE 9 */
+	    -webkit-transform: rotate(-10deg); /* Safari */
+	    transform: rotate(-10deg);
+	}
+
+	#bath {
+		top: 25em;
+	}
+}
+
+@media all and (max-width: 500px) {
+	#jump {
+		display: none;
+	}
+
+	#bath {
+		display: none;
+	}
+}
