@@ -332,7 +332,23 @@ body {
 }
 .friends-list {
 
+	width: 13%;
+	min-width: 140px;
+	height: 180px;
+	display : flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	margin-right: 10px;
+	align-items: center;
+	text-align: center;
+	margin-bottom: 10px;
 
+}
+
+.friend-list-logo img {
+	width: 90px;
+	height: auto;
+	margin-bottom: 10px;
 }
 
 .friend-buttons button:first-child{
@@ -342,11 +358,33 @@ body {
 .friend-buttons {
 	margin: 5px;
 }
+
+hr {
+	height: 7px;
+}
 /* bgc and border */
 
 .baby-box {
-	background-color: rgba(255,255,255,0.6);
+	background-color: rgba(255,255,255,0.9);
 	border: 2px solid #f6e6b4;
 	box-shadow: 0 0 3px 2px rgba(0,0,0,0.3);
 	border-radius: 5px;
+}
+
+/* games page */
+
+.games-btns {
+	width: 320px;
+	margin: 150px auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.games-btns button {
+	width: 100%;
+	height: 60px;
+	margin-bottom: 10px;
+	font-family: 'Baloo Bhai', cursive;
+	color: rgba(255,255,255,0.8);
+	border-radius: 10px;
 }

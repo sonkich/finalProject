@@ -17,13 +17,16 @@
          </div>
       </div>
    </div>
-   <hr>
+   <hr class="baby-box">
    <div class="no-friends empty-friend-box baby-box" ng-if="friends.length == 0">
       <h1>Your friend list is empty</h1>
    </div>
    <div class="friend-panel">
 
       <div class="friends-list baby-box" ng-repeat="friend in friends">
+         <div class="friend-list-logo">
+            <img src="./assets/img/moon.png"/>
+         </div>
          <div class="friend-username">
             {{friend.username2}}
          </div>
