@@ -210,11 +210,20 @@ body {
 	float: right;
 	clear: both;
 }
+
+.users-buttons {
+	float: left;
+}
 .user-search-box {
 	display: inline-block !important;
 	width: 200px;
-	margin: 40px;
+	margin-right: 40px;
+	margin-top: 40px;
 
+}
+
+.users-search label {
+	margin-left: 20px;
 }
 
 .pagination-wrapper ul {
@@ -433,8 +442,16 @@ hr {
 }
 
 .water-endgame-text {
+
+}
+.water-endgame {
+
+	padding: 10px;
+	width: 60%;
+	min-width: 326px;
+	margin: 0 auto;
 	margin-top: 200px;
-	font-size: 2em;
+	text-align: center;
 }
 
 .water-endgame-buttons {
@@ -451,7 +468,6 @@ hr {
 }
 
 .water-game-title h1 {
-	font-size: 2em;
 	font-family: 'Baloo Bhai', cursive;
 	margin-bottom: 10px;
 }

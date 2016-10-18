@@ -1,5 +1,5 @@
 <div class="water-all-wrapper">
-      <div class="water-game-title baby-box">
+      <div class="water-game-title baby-box" ng-if="!(bullets == 0)">
          <h1>
             Water Game
          </h1>
@@ -8,7 +8,7 @@
          </p>
       </div>
       <div class="water-game-wrapper">
-         <div class="points-count baby-box">
+         <div class="points-count baby-box" ng-if="!(bullets == 0)">
             Points:
 
             <p>
@@ -39,7 +39,7 @@
             </div>
          </div>
 
-         <div class="water-game-agenda baby-box">
+         <div class="water-game-agenda baby-box" ng-if="!(bullets == 0)">
 
             <table>
                <thead>
@@ -68,14 +68,14 @@
          </div>
       </div>
 
-      <div class="water-endgame" ng-if="(bullets == 0)">
+      <div class="water-endgame baby-box" ng-if="(bullets == 0)">
          <div class="water-endgame-text">
             <h1>You manage to make {{points}} points and you win
             {{diamonds}} <img src="assets/img/diamond.png"/>
              and {{water}} <img src="assets/img/water.png"/></h1>
          </div>
          <div class="water-endgame-buttons">
-            <button ng-click="reset()">Play again</button>
+            <button class=" btn btn-info" ng-click="reset()">Play again</button>
          </div>
       </div>
 

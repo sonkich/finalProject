@@ -1,7 +1,10 @@
 
 <div class="users-wrapper">
    <img width='150' src="./assets/img/baby-head.png"/>
+   
    <div class="users-search">
+      <button class="btn btn-default" ng-click="friends()">Friends</button>
+      <button class="btn btn-default" ng-click="ranking()">Ranking</button>
       <label>Search: <input type="text" class="form-control user-search-box" ng-model="searchWord"></label>
    </div>
    <div class="profil" ng-repeat="user in data | filter:searchWord | startFrom:(currentPage - 1) * pageSize | limitTo: pageSize">

@@ -7,6 +7,13 @@ myApp.controller("usersController",function(loggedUserSvc,$scope,$http,$location
    $scope.currentPage = 1;
    $scope.searchWord = '';
 
+   $scope.friends = function(){
+      $location.path("/friends");
+   }
+
+   $scope.ranking = function(){
+      $location.path("/ranking");
+   }
 
    $scope.openProfil = function(index) {
       var string = '/users/' + $scope.data[index].username;
