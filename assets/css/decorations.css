@@ -1,1 +1,92 @@
 @CHARSET "UTF-8";
+
+#moon {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	top: 4em;
+	left: 4em;
+	-ms-transform: rotate(-20deg); /* IE 9 */
+    -webkit-transform: rotate(-20deg); /* Safari */
+    transform: rotate(-20deg);
+}
+
+#title {
+	position: absolute;
+	width: 200px;
+	height: 100px;
+	top: 6em;
+	left: 12em;
+}
+
+#cloud {
+  	position: absolute;
+	width: 200px;
+	height: 200px;
+	top: 2em;
+	right: 4em;
+	-ms-transform: rotate(40deg); /* IE 9 */
+    -webkit-transform: rotate(40deg); /* Safari */
+    transform: rotate(40deg);
+}
+
+#hook {
+  	position: absolute;
+	width: 200px;
+	height: 200px;
+	top: 13em;
+	right: 8em;
+}
+
+#toy {
+  	position: absolute;
+	width: 80px;
+	height: 80px;
+	bottom: 6em;
+	right: 15em;
+	-ms-transform: rotate(-40deg); /* IE 9 */
+    -webkit-transform: rotate(-40deg); /* Safari */
+    transform: rotate(-40deg);
+}
+
+#car {
+  	position: absolute;
+	width: 250px;
+	height: 250px;
+	bottom: 4em;
+	left: 4em;
+	-ms-transform: rotate(-20deg); /* IE 9 */
+    -webkit-transform: rotate(-20deg); /* Safari */
+    transform: rotate(-20deg);
+}
+
+#art {
+  	position: absolute;
+	width: 280px;
+	height: 280px;
+	bottom: 0em;
+	right: 35em;
+	-ms-transform: rotate(20deg); /* IE 9 */
+    -webkit-transform: rotate(20deg); /* Safari */
+    transform: rotate(20deg);
+    z-index: -1;
+}
+
+#electricity {
+  	position: absolute;
+	width: 200px;
+	height: 200px;
+	top: 0em;
+	left: 40em;
+	-ms-transform: rotate(-30deg); /* IE 9 */
+    -webkit-transform: rotate(-30deg); /* Safari */
+    transform: rotate(-30deg);
+}
+
+@keyframes blinker {  
+  50% { opacity: 0; }
+}
+
+.blink_me {
+  animation: blinker 2s linear infinite;
+}
