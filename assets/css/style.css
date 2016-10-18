@@ -20,6 +20,7 @@ body {
 .pagination, .carousel, .panel-title a { cursor: pointer; }
 
 .navigation {
+	position: relative;
    display: flex;
    flex-direction: row;
    justify-content: space-between;
@@ -35,12 +36,12 @@ body {
    background: linear-gradient(to bottom, #fdecda 0%,#f4b065 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
-.navigation ul li {
+.navigation > ul li {
    float: left;
    margin-right: 8px;
 }
 
-.navigation a {
+.navigation > ul a {
    font-family: 'Baloo Bhai', cursive;
    color: #eeeeee;
    font-size: 20px;
@@ -56,6 +57,7 @@ body {
    font-size: 22px;
    font-family: 'Baloo Bhai', cursive;
    color: #ffff;
+	align-self: center;
 }
 
 .stats {
@@ -501,4 +503,49 @@ hr {
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: flex-start;
+}
+
+
+.btn-dropdown {
+	display: none;
+}
+.stats-min {
+	width: 100%;
+	padding: 5px;
+	display: none;
+	flex-direction: row;
+	justify-content: center;
+
+}
+
+.stats-min li{
+	float:left;
+}
+
+
+@media (max-width: 740px) {
+  .btn-dropdown {
+    display: block;
+	 padding: 0 !important;
+  }
+
+  .mine-nav {
+	  display: none;
+  }
+
+  .navigation{
+	  padding: 9px;
+  }
+
+  .logo {
+	  margin-right: 120px;
+  }
+
+  .stats-min {
+	  display: flex;
+  }
+
+  #stats-nav {
+	  display: none;
+  }
 }

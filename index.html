@@ -22,17 +22,41 @@
 <div class="container" id="wrapper">
    <div class="navigation" ng-if="checkLog()">
 
-      <ul>
+      <ul class="mine-nav">
          <li><a ng-href="#/users/{{parent}}">Home</a></li>
          <li><a href="#/games">Games</a></li>
          <li><a href="#/users">Users</a></li>
          <li><a href="#"><span ng-click="logout()" class="red">Logout</span></a></li>
       </ul>
+      <div class="btn-group btn-dropdown" uib-dropdown>
+            <button id="btn-append-to-single-button" type="button" class="btn btn-default" uib-dropdown-toggle>
+               <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+            </button>
+
+            <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="btn-append-to-single-button">
+              <li role="menuitem"><a ng-href="#/users/{{parent}}">Home</a></li>
+              <li role="menuitem"><a  href="#/games">Games</a></li>
+              <li role="menuitem"><a href="#/users">Users</a></li>
+              <li class="divider"></li>
+              <li role="menuitem"><a href="#"><span ng-click="logout()" class="red">Logout</span></a></li>
+            </ul>
+          </div>
       <span class="logo">
       BabyLand
       </span>
-      <ul>
+
+
+      <ul id="stats-nav">
       	 <li><img src="assets/img/target.png"/><span uib-popover="I appeared on mouse enter!" popover-trigger="'mouseenter'" class="stats">{{player.points}}</span></li>
+         <li><img src="assets/img/diamond.png"/><span class="stats">{{player.diamonds}}</span></li>
+         <li><img src="assets/img/meat.png"/><span class="stats">{{player.food_q}}</span></li>
+         <li><img src="assets/img/water.png"/><span class="stats">{{player.drink_q}}</span></li>
+         <li><img src="assets/img/teddy-bear.png"/><span class="stats">{{player.toys_q}}</span></li>
+      </ul>
+   </div>
+   <div class="stats-min baby-box">
+      <ul>
+         <li><img src="assets/img/target.png"/><span uib-popover="I appeared on mouse enter!" popover-trigger="'mouseenter'" class="stats">{{player.points}}</span></li>
          <li><img src="assets/img/diamond.png"/><span class="stats">{{player.diamonds}}</span></li>
          <li><img src="assets/img/meat.png"/><span class="stats">{{player.food_q}}</span></li>
          <li><img src="assets/img/water.png"/><span class="stats">{{player.drink_q}}</span></li>
