@@ -4,7 +4,7 @@
 	width: 100%;
 	height: 550px;
 	margin: 0.5em auto;
-	background: url("../img/room2.jpg") no-repeat center center fixed;
+	background: url("../img/room1.png") no-repeat center center fixed;
 	background-size: 100% 100%;
 	font-family: 'Baloo Bhai', cursive;
 	font-weight: bold;
@@ -87,6 +87,14 @@
 	margin: 0 auto;
 }
 
+.filter {
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	
+	z-index: 2;
+}
+
 #home #game #tools {
 	width: 20%;
 	height: 100%;
@@ -131,7 +139,7 @@
 }
 
 #home #game #status ul li {
-	float: left;
+	
 	margin-bottom: 1em;
 }
 
@@ -148,11 +156,15 @@
 	margin-left: 1em;
 }
 
+#home #game #friend-baby {
+	color: red;
+}
+
 .bubble {
   	background: rgba(255, 255, 255, 0.6) no-repeat center center;
 	background-size: 100% 100%;
-	width: 100px;
-	height: 100px;
+	width: 60%;
+	height: 20%;
 	cursor: pointer;
 	margin: 1em;
 	border-radius: 100px;
@@ -161,8 +173,36 @@
 	justify-content: center;
 }
 
-.bubble img {
-	width: 60%;
+.bubble-in {
+	width: 50%;
+	height: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#jar-bubble {
+	background: url('../img/jar.png') no-repeat center center;
+	background-size: 100% 100%;
+}
+
+#bottle-bubble {
+	background: url('../img/bottle.jpg') no-repeat center center;
+	background-size: 100% 100%;
+}
+
+#bear-bubble {
+	background: url('../img/bear.png') no-repeat center center;
+	background-size: 100% 100%;
+}
+
+#pacifier-bubble {
+	background: url('../img/pacifier.png') no-repeat center center;
+	background-size: 100% 100%;
+}
+
+.bubble-in img {
+	width: 80%;
    	z-index: 1;
 }
 
@@ -186,28 +226,4 @@
   -webkit-animation-name: puls; 
   -webkit-animation-duration: 1.5s; 
   -webkit-animation-iteration-count: infinite; 
-}
-
-@media all and (max-width: 1120px) {
-	#home #game #baby  {
-		left: 16em;
-	}
-}
-
-@media all and (max-width: 900px) {
-	#home #game #baby  {
-		left: 6em;
-	}
-}
-
-@media all and (min-height: 750px) {
-	#home #game #baby  {
-		bottom: 5em;
-	}
-}
-
-@media all and (min-height: 1000px) {
-	#home #game #baby  {
-		bottom: 10em;
-	}
 }

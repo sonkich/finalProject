@@ -18,37 +18,47 @@
 	</div>
 	
 	<div id="game" ng-hide="show==1">
+		<div class="filter" ng-style="{'background-color': filter }">
+			<div id="tools">
+				<div id="jar" class="bubble puls" ng-click="play($event)">
+					<div class="bubble-in" id="jar-bubble">
+						<img src="./assets/img/x-letter.png" alt="" ng-show="x"/>
+					</div>
+				</div>
+				<div id="bottle" class="bubble puls" ng-click="play($event)">
+					<div class="bubble-in" id="bottle-bubble">
+						<img src="./assets/img/x-letter.png" alt="" ng-show="x"/>
+					</div>
+				</div>
+				<div id="bear" class="bubble puls" ng-click="play($event)">
+					<div class="bubble-in" id="bear-bubble">
+						<img src="./assets/img/x-letter.png" alt="" ng-show="x"/>
+					</div>
+				</div>
+				<div id="pacifier" class="bubble puls" ng-click="sleep()">
+					<div class="bubble-in" id="pacifier-bubble">
+						<img src="./assets/img/x-letter.png" alt="" ng-show="x"/>
+					</div>
+				</div>
+			</div>
 		
-		<div id="tools">
-			<div id="jar" class="bubble puls" ng-click="play($event)">
-				<img src="./assets/img/bottle.jpg" alt="" />
+			<div id="baby-box">
+				<div id="baby" ng-style="{'background': 'url(' + babyImage + ') no-repeat center center', 'background-size': '100% 100%'}">
+					<img src="assets/img/bottle.jpg" alt="" id="drink" ng-show="bottle==1"/>
+				</div>
 			</div>
-			<div id="bottle" class="bubble puls" ng-click="play($event)">
-				<img src="./assets/img/jar.png" alt="" />
+			
+			<div id="status">
+				<ul>
+					<li><button class="btn btn-default" ng-click="openStore()" ng-show="benefits">Benefits</button></li>
+			        <li><div id="sound" ng-click="soundOnOff()" ng-style="{'background': 'url(' + sound + ') no-repeat center center', 'background-size': '100% 100%'}"></div></li>
+			        <li id="friend-baby">{{friend_baby}}</li>
+			        <li>Name: {{baby.name}} </li>
+			        <li>Food: {{baby.food}}%</li>
+			        <li>Drink: {{baby.drink}}%</li>
+			        <li>Happiness: {{baby.happiness}}%</li>
+			    </ul>
 			</div>
-			<div id="bear" class="bubble puls" ng-click="play($event)">
-				<img src="./assets/img/bear.png" alt="" />
-			</div>
-			<div id="pacifier" class="bubble puls" ng-click="sleep()">
-				<img src="./assets/img/pacifier.png" alt="" />
-			</div>
-		</div>
-		
-		<div id="baby-box">
-			<div id="baby" ng-style="{'background': 'url(' + babyImage + ') no-repeat center center', 'background-size': '100% 100%'}">
-				<img src="assets/img/bottle.jpg" alt="" id="drink" ng-show="bottle==1"/>
-			</div>
-		</div>
-		
-		<div id="status">
-			<ul>
-				<li><button class="btn btn-default" ng-click="openStore()">Benefits</button></li>
-		        <li><div id="sound" ng-click="soundOnOff()" ng-style="{'background': 'url(' + sound + ') no-repeat center center', 'background-size': '100% 100%'}"></div></li>
-		        <li>Name: {{baby.name}} </li>
-		        <li>Food: {{baby.food}}%</li>
-		        <li>Drink: {{baby.drink}}%</li>
-		        <li>Happiness: {{baby.happiness}}%</li>
-		    </ul>
 		</div>
 	</div>
 </div>

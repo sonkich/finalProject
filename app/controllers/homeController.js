@@ -6,6 +6,10 @@ myApp.controller("homeController",function($scope, $rootScope,  $location, $rout
 	$scope.babyName = '';
 	$rootScope.baby = {};
 	$rootScope.player = {};
+	$scope.benefits = true;
+	$scope.friend_baby = '';
+	$scope.x = false;
+	$scope.filter = '';
 	$scope.friends;
 	$scope.playing = false;
 	$scope.sound = './assets/img/sound_on.png';
@@ -35,13 +39,13 @@ myApp.controller("homeController",function($scope, $rootScope,  $location, $rout
 				var parent = {
 						'username': $routeParams.user
 				}
+				
 				homeSvc.getPlayer(user).then( function(result) {
 					$rootScope.player = result;
-					console.log(result);
 					homeSvc.getBaby(parent).then(function(result) {
 						$rootScope.baby = result;
-						console.log(result);
-						if (loggedUserSvc.getInfo().is_alive == 0) {
+						updateFriends();
+						if ($rootScope.baby.is_alive == 0) {
 							$scope.babyImage = './assets/img/gost.png';
 						} else {
 							if ($rootScope.baby.gender == 'm') {
@@ -57,7 +61,6 @@ myApp.controller("homeController",function($scope, $rootScope,  $location, $rout
 		}
 	}
 	loadGame();
-	updateFriends();
 
 	$scope.createBaby = function(item) {
 		if ($scope.babyName == '') {
@@ -198,13 +201,15 @@ myApp.controller("homeController",function($scope, $rootScope,  $location, $rout
 	}
 
 	$scope.sleep = function() {
-		if ($scope.playing == false) {
-			$scope.playing = true;
-			playAudio('./assets/sounds/sleep1.mp3');
-			if ($rootScope.baby.gender == 'm') {
-				imageChange('./assets/img/boy_sleep.png', './assets/img/boy1.png', 14000);
-			} else {
-				imageChange('./assets/img/girl_sleep.png', './assets/img/girl1.png', 14000)
+		if ($routeParams.user == localStorage.getItem("username") || isFriend()) {
+			if ($scope.playing == false) {
+				$scope.playing = true;
+				playAudio('./assets/sounds/sleep1.mp3');
+				if ($rootScope.baby.gender == 'm') {
+					imageChange('./assets/img/boy_sleep.png', './assets/img/boy1.png', 14000);
+				} else {
+					imageChange('./assets/img/girl_sleep.png', './assets/img/girl1.png', 14000)
+				}
 			}
 		}
 	}
@@ -243,7 +248,8 @@ myApp.controller("homeController",function($scope, $rootScope,  $location, $rout
 	           data : $httpParamSerializerJQLike(data)
 	         }).then(function successCallback(response) {
 	            $scope.friends = response.data;
-	            console.log($scope.friends);
+	            isFriend();
+	            notFriend();
 	           }, function errorCallback(response) {
 	            console.log("ERROR");
 	         });
@@ -256,5 +262,17 @@ myApp.controller("homeController",function($scope, $rootScope,  $location, $rout
 			}
 		}
 		return false;
+	}
+	
+	function notFriend() {
+		if($routeParams.user != localStorage.getItem("username") && !isFriend()) {
+			$scope.x = true;
+			$scope.filter = 'rgba(128,128,128, 0.6)';
+			$scope.benefits = false;
+			$scope.friend_baby = "Add friend";
+		} else if (isFriend()) {
+			$scope.benefits = false;
+			$scope.friend_baby = "Friend's baby";
+		}
 	}
 });
