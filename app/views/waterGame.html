@@ -1,23 +1,73 @@
 <div class="water-all-wrapper">
+      <div class="water-game-title baby-box">
+         <h1>
+            Water Game
+         </h1>
+         <p>
+            Pick 10 cards to collect points and profits.
+         </p>
+      </div>
+      <div class="water-game-wrapper">
+         <div class="points-count baby-box">
+            Points:
 
-
-      <div class="water-wrapper" ng-if="!(bullets == 0)">
-         <div class="water-stats">
-            <div class="points">
-               Points:{{points}}
+            <p>
+               1 drop = 1 point
+            </p>
+            <p>
+               1 bottle water = 10 points
+            </p>
+            <p>
+               1 dispenser = 50 points
+            </p>
+         </div>
+         <div class="water-wrapper baby-box" ng-if="!(bullets == 0)">
+            <div class="water-stats">
+               <div class="points">
+                  Points:{{points}}
+               </div>
+               <div class="shots">
+                  Shots left:{{bullets}}
+               </div>
             </div>
-            <div class="shots">
-               Shots left:{{bullets}}
+            <div class="water" ng-repeat="water in waterList track by $index" >
+               <div class="water-img" ng-show="water.visible">
+                  <img ng-src="{{water.url}}"/>
+               </div>
+               <div class="water-back" ng-show="!water.visible" ng-click="turnVisible($index)">
+               </div>
             </div>
          </div>
-         <div class="water" ng-repeat="water in waterList track by $index" >
-            <div class="water-img" ng-show="water.visible">
-               <img ng-src="{{water.url}}"/>
-            </div>
-            <div class="water-back" ng-show="!water.visible" ng-click="turnVisible($index)">
-            </div>
+
+         <div class="water-game-agenda baby-box">
+
+            <table>
+               <thead>
+                  <th>Points</th>
+                  <th>Rewards</th>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>0 - 50</td>
+                     <td>1 <img src="assets/img/water.png"/></td>
+                  </tr>
+                  <tr>
+                     <td>50 - 100</td>
+                     <td>2 <img src="assets/img/water.png"/> 1 <img src="assets/img/diamond.png"/></td>
+                  </tr>
+                  <tr>
+                     <td>100 - 150</td>
+                     <td>3 <img src="assets/img/water.png"/> 2 <img src="assets/img/diamond.png"/></td>
+                  </tr>
+                  <tr>
+                     <td>150+</td>
+                     <td>5 <img src="assets/img/water.png"/> 5 <img src="assets/img/diamond.png"/></td>
+                  </tr>
+               </tbody>
+            </table>
          </div>
       </div>
+
       <div class="water-endgame" ng-if="(bullets == 0)">
          <div class="water-endgame-text">
             <h1>You manage to make {{points}} points and you win
@@ -29,7 +79,7 @@
          </div>
       </div>
 
-      
+
 
 
 </div>
