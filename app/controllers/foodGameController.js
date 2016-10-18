@@ -78,22 +78,13 @@ myApp.controller('foodGameController',function($scope,$location,$rootScope, home
 		$scope.ch3 = false;
 		if (item.currentTarget.getAttribute("id") == 'food1') {
 			currentFood = 1;
-			$scope.ingr1 = list[0].url;
-			$scope.ingr2 = list[1].url;
-			$scope.ingr3 = list[2].url;
-			$scope.foods = shuffle(list);
+			foodLoad ();
 		} else if (item.currentTarget.getAttribute("id") == 'food2') {
 			currentFood = 2;
-			$scope.ingr1 = list[3].url;
-			$scope.ingr2 = list[4].url;
-			$scope.ingr3 = list[5].url;
-			$scope.foods = shuffle(list);
+			foodLoad ();
 		} else {
 			currentFood = 3;
-			$scope.ingr1 = list[6].url;
-			$scope.ingr2 = list[7].url;
-			$scope.ingr3 = list[8].url;
-			$scope.foods = shuffle(list);
+			foodLoad ();
 		}
 	}
 	
@@ -177,5 +168,22 @@ myApp.controller('foodGameController',function($scope,$location,$rootScope, home
 	    }
 
 	    return array;
+	}
+
+	function foodLoad () {
+		if (currentFood == 1) {
+			$scope.ingr1 = list[0].url;
+			$scope.ingr2 = list[1].url;
+			$scope.ingr3 = list[2].url;
+		} else if (currentFood == 2) {
+			$scope.ingr1 = list[3].url;
+			$scope.ingr2 = list[4].url;
+			$scope.ingr3 = list[5].url;
+		} else if (currentFood == 3) {
+			$scope.ingr1 = list[6].url;
+			$scope.ingr2 = list[7].url;
+			$scope.ingr3 = list[8].url;
+		}
+		$scope.foods = shuffle(list);
 	}
 });

@@ -28,7 +28,7 @@
 	</div>
 	
 	<h2>Find ingredients: {{trys}} trys</h2>
-	<button ng-click="resetData()">Reset</button>
+	<button ng-click="resetData()" class="btn btn-default">Reset</button>
 	<div class="ingr-wrapper">
         <div class="food" ng-repeat="food in foods track by $index" >
            <div class="food-img" ng-show="food.visible" ng-click="turnVisible($index)">

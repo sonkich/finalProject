@@ -6,6 +6,7 @@ myApp.controller("homeController",function($scope, $rootScope,  $location, $rout
 	$scope.babyName = '';
 	$rootScope.baby = {};
 	$rootScope.player = {};
+	$scope.newFriend = false;
 	$scope.benefits = true;
 	$scope.friend_baby = '';
 	$scope.x = false;
@@ -104,7 +105,7 @@ myApp.controller("homeController",function($scope, $rootScope,  $location, $rout
 
 
 			userInfo.is_alive = 1;
-			$scope.show = 2;
+			$route.reload();
 		}
 	}
 
@@ -223,7 +224,34 @@ myApp.controller("homeController",function($scope, $rootScope,  $location, $rout
 			$scope.sound = './assets/img/sound_off.png'
 		}
 	}
+	
+	$scope.sendFriendRequest = function() {
+	      var sendingData = {};
+	      sendingData.receiver = $routeParams.user;
+	      sendingData.sender = loggedUserSvc.getInfo().username;
 
+	      if(sendingData.receiver != sendingData.sender){
+	         $http({
+	   	  		  method: 'POST',
+	   	  		  url: './server/addFriendRequest.php',
+	   	  		  headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+	              data : $httpParamSerializerJQLike(sendingData)
+
+	   	  		}).then(function successCallback(response) {
+	   	  			   if(response.data.error.length != 0){
+	                     alert(response.data.error)
+	                  }
+	   	  		  }, function errorCallback(response) {
+	   	  			console.log("ERROR");
+	     		    console.log(response.data);
+	   	  		});
+	      }else{
+	         console.log("You cant invite yourself");
+	      }
+
+
+	   }
+	
 	function imageChange(url1, url2, time) {
 		$scope.babyImage = url1;
 		$timeout(function() {
@@ -270,9 +298,11 @@ myApp.controller("homeController",function($scope, $rootScope,  $location, $rout
 			$scope.filter = 'rgba(128,128,128, 0.6)';
 			$scope.benefits = false;
 			$scope.friend_baby = "Add friend";
+			$scope.newFriend = true;
 		} else if (isFriend()) {
 			$scope.benefits = false;
 			$scope.friend_baby = "Friend's baby";
+			$scope.filter = 'rgba(65,169,76, 0.6)'
 		}
 	}
 });
