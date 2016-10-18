@@ -1,18 +1,31 @@
 <div class="animals-all-wrapper">
+      <div class="toyGame-title baby-box" ng-if="!over">
+         <h1>
+            Toy Game
+         </h1>
+         <p>
+            Collect 1 <img src="assets/img/teddy-bear.png"/> and 1 <img src="assets/img/diamond.png"/> by matching all cards.
+         </p>
+      </div>
+      <div class="toyGame-wrapper" ng-if="!over">
 
-
-      <div class="animals-wrapper">
-         <div class="animal" ng-repeat="icon in icons track by $index" >
-            <div class="animal-img" ng-show="icon.visible" ng-click="turnVisible($index)">
-               <img ng-src="{{icon.url}}"/>
-            </div>
-            <div class="animal-back" ng-show="!icon.visible" ng-click="turnVisible($index)">
+         <div class="animals-wrapper baby-box">
+            <div class="animal" ng-repeat="icon in icons track by $index" >
+               <div class="animal-img" ng-show="icon.visible" ng-click="turnVisible($index)">
+                  <img ng-src="{{icon.url}}"/>
+               </div>
+               <div class="animal-back" ng-show="!icon.visible" ng-click="turnVisible($index)">
+               </div>
             </div>
          </div>
       </div>
 
-      <div class="toy-game-btns">
-         <button ng-click="resetData()">Reset</button>
+
+      <div class="toy-game-over baby-box" ng-if="over">
+         <div class="toy-game-over-msg">
+            <h1>You won 1 <img src="assets/img/teddy-bear.png"/> and 1 <img src="assets/img/diamond.png"/></h1>
+         </div>
+         <button class="btn btn-warning" ng-click="reset()">Play again</button>
       </div>
 
 
