@@ -4,7 +4,7 @@
 	width: 100%;
 	height: 550px;
 	margin: 0.5em auto;
-	background: url("../img/room.png") no-repeat center center fixed;
+	background: url("../img/room2.jpg") no-repeat center center fixed;
 	background-size: 100% 100%;
 	font-family: 'Baloo Bhai', cursive;
 	font-weight: bold;
@@ -85,7 +85,35 @@
 	width: 100%;
 	height: 100%;
 	margin: 0 auto;
+}
+
+#home #game #tools {
+	width: 20%;
+	height: 100%;
+	float: left;
+}
+
+#home #game #baby-box {
+	width: 60%;
+	height: 100%;
 	position: relative;
+	float: left;
+}
+
+#home #game #baby-box #baby {
+  	background: url("../img/girl1.png") no-repeat center center;
+	background-size: 100% 100%;
+	width: 70%;
+	height: 70%;
+	margin-top: 8em;
+}
+
+#home #game #baby #drink {
+	width: 80px;
+	height: 110px;
+	transform: rotate(50deg);
+	margin-top: 13em;
+	margin-left: 6em;
 }
 
 #home #game #status {
@@ -97,15 +125,17 @@
 	padding: 15px;
 	border: 1px solid #f6e6b4;
    	box-shadow:  0 1px 2px black;
+   	width: 20%;
+   	height: 100%;
+   	float: left;
 }
 
 #home #game #status ul li {
-   float: left;
-   margin-right: 15px;
+	float: left;
+	margin-bottom: 1em;
 }
 
 #home #game #status button {
-	border-radius: 5px;
 	outline: none;
 }
 
@@ -114,26 +144,8 @@
 	background-size: 100% 100%;
 	width: 20px;
 	height: 20px;
-	margin-left: 2em;
-	cursor: pointer;
-}
-
-#home #game #baby {
-  	background: url("../img/girl1.png") no-repeat center center;
-	background-size: 100% 100%;
-	width: 400px;
-	height: 400px;
-	bottom: 2em;
-	left: 15em;
-	position: absolute;
-}
-
-#home #game #baby #drink {
-	width: 80px;
-	height: 110px;
-	transform: rotate(50deg);
-	margin-top: 13em;
-	margin-left: 6em;
+	cursor: pointer; 
+	margin-left: 1em;
 }
 
 .bubble {

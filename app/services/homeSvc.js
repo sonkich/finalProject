@@ -12,7 +12,7 @@ myApp.factory("homeSvc", function($http, $httpParamSerializerJQLike){
 	  		  headers: {'Content-Type': 'application/x-www-form-urlencoded'},
 	  		  data : $httpParamSerializerJQLike(baby)
 	  		}).then(function successCallback(response) {
-	  			console.log('Baby save: ' + response.data);
+	  			
 	  		  }, function errorCallback(response) {
 	  			console.log("ERROR");
 	  		    console.log(response.data);
@@ -60,7 +60,6 @@ myApp.factory("homeSvc", function($http, $httpParamSerializerJQLike){
 	  		  headers: {'Content-Type': 'application/x-www-form-urlencoded'},
 	  		  data : $httpParamSerializerJQLike(baby)
 	  		}).then(function successCallback(response) {
-	  			console.log('Baby set: ' + response.data);
 	  			setPlayer(player);
 
 	  		  }, function errorCallback(response) {
@@ -76,7 +75,7 @@ myApp.factory("homeSvc", function($http, $httpParamSerializerJQLike){
 	  		  headers: {'Content-Type': 'application/x-www-form-urlencoded'},
 	  		  data : $httpParamSerializerJQLike(player)
 	  		}).then(function successCallback(response) {
-	  			console.log('Player set: ' + response.data);
+	  			
 
 	  		  }, function errorCallback(response) {
 	  			console.log("ERROR");
