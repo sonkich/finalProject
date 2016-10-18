@@ -368,15 +368,6 @@ hr {
 	margin-top: 20px;
 }
 
-<<<<<<< HEAD
-@keyframes blinker {  
-  50% { opacity: 0; }
-}
-
-.blink_me {
-  animation: blinker 2s linear infinite;
-}
-
 /* water game */
 
 .water-all-wrapper {
