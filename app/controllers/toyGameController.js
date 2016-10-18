@@ -1,8 +1,16 @@
 myApp.controller("toyGameController",function($rootScope,$scope,$timeout,homeSvc){
-   $scope.icons = shuffle(iconsList);
+   $scope.icons = {};
 
-      var clicked = [];
-      var count = 0;
+   var clicked = [];
+   var count = 0;
+
+   $scope.over = false;
+
+   resetData();
+
+   $scope.reset = function(){
+      resetData();
+   }
 
       $scope.turnVisible = function (index){
 
@@ -21,33 +29,34 @@ myApp.controller("toyGameController",function($rootScope,$scope,$timeout,homeSvc
                   clicked[0].visible = false;
                   clicked[1].visible = false;
                   clicked = [];
-               },500);
+               },350);
             }
 
             if(count === $scope.icons.length){
                $rootScope.player.toys_q = parseInt($rootScope.player.toys_q) + 1;
                $rootScope.player.diamonds = parseInt($rootScope.player.diamonds) + 1;
                homeSvc.setData($rootScope.baby, $rootScope.player);
-
-               alert("win")
-            }
-
-
-         }
-
-
-         $scope.resetData = function(){
-            for(icon in iconsList){
-               iconsList[icon].visible = false;
+               $scope.over = true;
 
             }
 
-            clicked = [];
-            count = 0;
-            $scope.icons = shuffle(iconsList);
+
          }
 
       };
+      function resetData(){
+         for(icon in iconsList){
+            iconsList[icon].visible = false;
+         }
+
+         clicked = [];
+         count = 0;
+         $scope.icons = shuffle(iconsList);
+
+         $scope.over = false;
+      };
+
+
 
 
 
