@@ -47,20 +47,20 @@
 
 
       <ul id="stats-nav">
-      	 <li><img src="assets/img/target.png"/><span uib-popover="I appeared on mouse enter!" popover-trigger="'mouseenter'" class="stats">{{player.points}}</span></li>
-         <li><img src="assets/img/diamond.png"/><span class="stats">{{player.diamonds}}</span></li>
-         <li><img src="assets/img/meat.png"/><span class="stats">{{player.food_q}}</span></li>
-         <li><img src="assets/img/water.png"/><span class="stats">{{player.drink_q}}</span></li>
-         <li><img src="assets/img/teddy-bear.png"/><span class="stats">{{player.toys_q}}</span></li>
+      	 <li uib-popover="Points" popover-placement='bottom', popover-trigger="'mouseenter'"><img src="assets/img/target.png"/><span  class="stats">{{player.points}}</span></li>
+         <li uib-popover="Diamonds" popover-placement='bottom', popover-trigger="'mouseenter'"><img src="assets/img/diamond.png"/><span class="stats">{{player.diamonds}}</span></li>
+         <li uib-popover="Food quantity" popover-placement='bottom', popover-trigger="'mouseenter'"><img src="assets/img/meat.png"/><span class="stats">{{player.food_q}}</span></li>
+         <li uib-popover="Water quantity" popover-placement='bottom', popover-trigger="'mouseenter'"><img src="assets/img/water.png"/><span class="stats">{{player.drink_q}}</span></li>
+         <li uib-popover="Toys quantity" popover-placement='bottom', popover-trigger="'mouseenter'"><img src="assets/img/teddy-bear.png"/><span class="stats">{{player.toys_q}}</span></li>
       </ul>
    </div>
    <div class="stats-min baby-box" ng-if="checkLog()">
       <ul>
-         <li><img src="assets/img/target.png"/><span uib-popover="I appeared on mouse enter!" popover-trigger="'mouseenter'" class="stats">{{player.points}}</span></li>
-         <li><img src="assets/img/diamond.png"/><span class="stats">{{player.diamonds}}</span></li>
-         <li><img src="assets/img/meat.png"/><span class="stats">{{player.food_q}}</span></li>
-         <li><img src="assets/img/water.png"/><span class="stats">{{player.drink_q}}</span></li>
-         <li><img src="assets/img/teddy-bear.png"/><span class="stats">{{player.toys_q}}</span></li>
+         <li uib-popover="Points" popover-trigger="'mouseenter'"><img src="assets/img/target.png"/><span  class="stats">{{player.points}}</span></li>
+         <li uib-popover="Diamonds" popover-trigger="'mouseenter'"><img src="assets/img/diamond.png"/><span class="stats">{{player.diamonds}}</span></li>
+         <li uib-popover="Food quantity" popover-trigger="'mouseenter'"><img src="assets/img/meat.png"/><span class="stats">{{player.food_q}}</span></li>
+         <li uib-popover="Water quantity" popover-trigger="'mouseenter'"><img src="assets/img/water.png"/><span class="stats">{{player.drink_q}}</span></li>
+         <li uib-popover="Toys quantity" popover-trigger="'mouseenter'"><img src="assets/img/teddy-bear.png"/><span class="stats">{{player.toys_q}}</span></li>
       </ul>
    </div>
    <div ng-view>
