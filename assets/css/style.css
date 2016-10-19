@@ -54,10 +54,15 @@ body {
 }
 
 .logo {
-   font-size: 22px;
-   font-family: 'Baloo Bhai', cursive;
-   color: #ffff;
-	align-self: center;
+	width: 100px;
+	height: 20px;
+	position: relative;
+}
+.logo img {
+	position: absolute;
+	bottom: -15px;
+	width: 140px;
+	height: auto;
 }
 
 .stats {
