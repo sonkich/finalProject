@@ -19,6 +19,23 @@
 	
 	<div id="game" ng-hide="show==1">
 		<div class="filter" ng-style="{'background-color': filter }">
+		
+			<div id="status1">
+				<ul>
+					
+			        <li class="friend-baby">{{friend_baby}}</li>
+			        <li>Name: {{baby.name}} </li>
+			        <li>F: {{baby.food}}%</li>
+			        <li>D: {{baby.drink}}%</li>
+			        <li>H: {{baby.happiness}}%</li>
+			        <li><button class="btn btn-default" ng-click="sendFriendRequest()" ng-show="newFriend">Add friend</button></li>
+			    </ul>
+			    <ul>	
+			    	 <li><div id="sound" ng-click="soundOnOff()" ng-style="{'background': 'url(' + sound + ') no-repeat center center', 'background-size': '100% 100%'}"></div></li>
+			    	<li><button class="btn btn-default" ng-click="openStore()" ng-show="benefits">Benefits</button></li>
+			    </ul>
+			</div>
+			
 			<div id="tools">
 				<div id="jar" class="bubble puls" ng-click="play($event)">
 					<div class="bubble-in" id="jar-bubble">
@@ -52,7 +69,7 @@
 				<ul>
 					<li><button class="btn btn-default" ng-click="openStore()" ng-show="benefits">Benefits</button></li>
 			        <li><div id="sound" ng-click="soundOnOff()" ng-style="{'background': 'url(' + sound + ') no-repeat center center', 'background-size': '100% 100%'}"></div></li>
-			        <li id="friend-baby">{{friend_baby}}</li>
+			        <li class="friend-baby">{{friend_baby}}</li>
 			        <li>Name: {{baby.name}} </li>
 			        <li>Food: {{baby.food}}%</li>
 			        <li>Drink: {{baby.drink}}%</li>

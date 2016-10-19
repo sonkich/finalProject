@@ -47,9 +47,14 @@
 	cursor: pointer;
 }
 
-#foodGame h1 {
+#rule {
 	float: right;
+	padding: 10px;
+}
+
+#foodGame h1 {
 	font-size: 1.5em;
+	margin-bottom: 1em;
 }
 
 #foodGame #cook {
@@ -113,6 +118,14 @@
    background: -webkit-linear-gradient(top, #f3e5f5 0%,#ab47bc 100%); /* Chrome10-25,Safari5.1-6 */
    background: linear-gradient(to bottom, #f3e5f5 0%,#ab47bc 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
+
+.food-back:hover {
+	background: #ab47bc; /* Old browsers */
+    background: -moz-linear-gradient(top, #ab47bc 0%, #ab47bc 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #ab47bc 0%,#ab47bc 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #ab47bc 0%,#ab47bc 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
 .food {
    width: 20%;
    height: 80px;
@@ -121,8 +134,4 @@
    position: relative;
    cursor: pointer;
 
-}
-
-#foodGame button {
-	
 }
