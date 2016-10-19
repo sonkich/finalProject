@@ -41,33 +41,51 @@ myApp.controller("homeController",function($scope, $rootScope,  $location, $rout
 				homeSvc.getPlayer(user).then( function(result) {
 					$rootScope.player = result;
 				})
+			
 			} else {
 				$scope.show = 2;
 				var user = {
 						'username': localStorage.getItem("username")
 				}
-
+				
 				var parent = {
 						'username': $routeParams.user
 				}
-
-				homeSvc.getPlayer(user).then( function(result) {
-					$rootScope.player = result;
-					homeSvc.getBaby(parent).then(function(result) {
-						$rootScope.baby = result;
-						updateFriends();
-						if ($rootScope.baby.is_alive == 0) {
-							$scope.babyImage = './assets/img/gost.png';
-						} else {
-							if ($rootScope.baby.gender == 'm') {
-								$scope.babyImage = './assets/img/boy1.png';
-							} else {
-								$scope.babyImage = './assets/img/girl1.png';
+				
+				$http({
+			  		method: 'POST',
+			  	    url: './server/routUserCheck.php',
+			  		headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+			  		data : $httpParamSerializerJQLike(parent)
+			  	}).then(function successCallback(response) {
+			  		 if (JSON.parse(response.data) == false) {
+			  			return $location.path('/users/' + localStorage.getItem("username"));
+			  		 }
+			  		
+			  		homeSvc.getPlayer(user).then( function(result) {
+						$rootScope.player = result;
+						homeSvc.getBaby(parent).then(function(result) {
+							$rootScope.baby = result;
+							updateFriends();
+							if (!$rootScope.baby.is_alive) {
+								$location.path('/users/' + localStorage.getItem("username"));
 							}
-						}
+							if ($rootScope.baby.is_alive == 0) {
+								$scope.babyImage = './assets/img/gost.png';
+							} else {
+								if ($rootScope.baby.gender == 'm') {
+									$scope.babyImage = './assets/img/boy1.png';
+								} else {
+									$scope.babyImage = './assets/img/girl1.png';
+								}
+							}
+						})
 					})
-				})
 
+			  	}, function errorCallback(response) {
+			  		console.log("ERROR");
+			  		console.log(response.data);
+			  	});
 			}
 		}
 	}
