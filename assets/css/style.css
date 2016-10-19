@@ -532,6 +532,14 @@ hr {
 	float:left;
 }
 
+.user-alert {
+	position: fixed !important;
+	top: 300px !important;
+	width: 500px !important;
+	left: 30% !important;
+	z-index: 20 !important;
+}
+
 
 @media (max-width: 740px) {
   .btn-dropdown {

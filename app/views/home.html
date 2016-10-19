@@ -1,7 +1,13 @@
+
 <div id="home">
+	<script type="text/ng-template" id="alert.html">
+	<div ng-transclude></div>
+	</script>
+	<div uib-alert  class="alert-danger user-alert" ng-if="alerts.errorFlag" close="dangerClose()">{{alerts.error}}</div>
+	<div uib-alert  class="alert-success user-alert" ng-if="alerts.success" close="successClose()">Friend request send.</div>
 	<div id="start" ng-show="show==1">
 		<h1>CHOOSE YOUR BABY</h1>
-		
+
 		<div id="name">
 			<form action="" method="post">
 				<div>
@@ -10,19 +16,19 @@
 					<input type="text" ng-model="babyName" id="baby-name" name="baby-name"/><span id="enter-name">{{error}}</span>
 			</form>
 		</div>
-		
+
 		<div id="child">
 			<div id="boy" ng-click="createBaby($event)"></div>
 			<div id="girl" ng-click="createBaby($event)"></div>
 		</div>
 	</div>
-	
+
 	<div id="game" ng-hide="show==1">
 		<div class="filter" ng-style="{'background-color': filter }">
-		
+
 			<div id="status1">
 				<ul>
-					
+
 			        <li class="friend-baby">{{friend_baby}}</li>
 			        <li>Name: {{baby.name}} </li>
 			        <li>F: {{baby.food}}%</li>
@@ -30,12 +36,12 @@
 			        <li>H: {{baby.happiness}}%</li>
 			        <li><button class="btn btn-default" ng-click="sendFriendRequest()" ng-show="newFriend">Add friend</button></li>
 			    </ul>
-			    <ul>	
+			    <ul>
 			    	 <li><div id="sound" ng-click="soundOnOff()" ng-style="{'background': 'url(' + sound + ') no-repeat center center', 'background-size': '100% 100%'}"></div></li>
 			    	<li><button class="btn btn-default" ng-click="openStore()" ng-show="benefits">Benefits</button></li>
 			    </ul>
 			</div>
-			
+
 			<div id="tools">
 				<div id="jar" class="bubble puls" ng-click="play($event)">
 					<div class="bubble-in" id="jar-bubble">
@@ -58,13 +64,13 @@
 					</div>
 				</div>
 			</div>
-		
+
 			<div id="baby-box">
 				<div id="baby" ng-style="{'background': 'url(' + babyImage + ') no-repeat center center', 'background-size': '100% 100%'}">
 					<img src="assets/img/bottle.jpg" alt="" id="drink" ng-show="bottle==1"/>
 				</div>
 			</div>
-			
+
 			<div id="status">
 				<ul>
 					<li><button class="btn btn-default" ng-click="openStore()" ng-show="benefits">Benefits</button></li>

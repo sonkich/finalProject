@@ -7,6 +7,20 @@ myApp.controller("usersController",function(loggedUserSvc,$scope,$http,$location
    $scope.currentPage = 1;
    $scope.searchWord = '';
 
+   $scope.alerts = {};
+
+   $scope.alerts.success = false;
+   $scope.alerts.errorFlag = false;
+   $scope.alerts.error = '';
+
+   $scope.successClose = function(){
+      $scope.alerts.success = false;
+   }
+
+   $scope.dangerClose = function(){
+      $scope.alerts.errorFlag = false;
+   }
+
    $scope.friends = function(){
       $location.path("/friends");
    }
@@ -34,14 +48,18 @@ myApp.controller("usersController",function(loggedUserSvc,$scope,$http,$location
 
    	  		}).then(function successCallback(response) {
    	  			   if(response.data.error.length != 0){
-                     alert(response.data.error)
+                     $scope.alerts.error = response.data.error;
+                     $scope.alerts.errorFlag = true;
+                  }else{
+                     $scope.alerts.success = true;
                   }
    	  		  }, function errorCallback(response) {
    	  			console.log("ERROR");
      		    console.log(response.data);
    	  		});
       }else{
-         console.log("You cant invite yourself");
+         $scope.alerts.error = "You cant invite yourself";
+         $scope.alerts.errorFlag = true;
       }
 
 

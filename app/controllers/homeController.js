@@ -17,6 +17,16 @@ myApp.controller("homeController",function($scope, $rootScope,  $location, $rout
 	$scope.bottle = 0;
 	var audio = new Audio();
 	var userInfo = loggedUserSvc.getInfo();
+	$scope.alerts = {};
+	$scope.alerts.success = false;
+	$scope.alerts.error = '';
+	$scope.alerts.errorFlag = false;
+	$scope.dangerClose = function (){
+		$scope.alerts.errorFlag = false;
+	}
+	$scope.successClose = function(){
+      $scope.alerts.success = false;
+   }
 
 	function loadGame() {
 
@@ -40,7 +50,7 @@ myApp.controller("homeController",function($scope, $rootScope,  $location, $rout
 				var parent = {
 						'username': $routeParams.user
 				}
-				
+
 				homeSvc.getPlayer(user).then( function(result) {
 					$rootScope.player = result;
 					homeSvc.getBaby(parent).then(function(result) {
@@ -224,7 +234,7 @@ myApp.controller("homeController",function($scope, $rootScope,  $location, $rout
 			$scope.sound = './assets/img/sound_off.png'
 		}
 	}
-	
+
 	$scope.sendFriendRequest = function() {
 	      var sendingData = {};
 	      sendingData.receiver = $routeParams.user;
@@ -239,8 +249,12 @@ myApp.controller("homeController",function($scope, $rootScope,  $location, $rout
 
 	   	  		}).then(function successCallback(response) {
 	   	  			   if(response.data.error.length != 0){
-	                     alert(response.data.error)
-	                  }
+								$scope.alerts.error = response.data.error;
+								$scope.alerts.errorFlag = true;
+								console.log($scope.alerts.errorFlag);
+	                  }else{
+								$scope.alerts.success = true;
+							}
 	   	  		  }, function errorCallback(response) {
 	   	  			console.log("ERROR");
 	     		    console.log(response.data);
@@ -251,7 +265,7 @@ myApp.controller("homeController",function($scope, $rootScope,  $location, $rout
 
 
 	   }
-	
+
 	function imageChange(url1, url2, time) {
 		$scope.babyImage = url1;
 		$timeout(function() {
@@ -291,7 +305,7 @@ myApp.controller("homeController",function($scope, $rootScope,  $location, $rout
 		}
 		return false;
 	}
-	
+
 	function notFriend() {
 		if($routeParams.user != localStorage.getItem("username") && !isFriend()) {
 			$scope.x = true;

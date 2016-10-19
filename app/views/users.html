@@ -1,12 +1,17 @@
 
 <div class="users-wrapper">
+   <script type="text/ng-template" id="alert.html">
+   <div ng-transclude></div>
+   </script>
    <img width='150' src="./assets/img/baby-head.png"/>
-   
+
    <div class="users-search">
       <button class="btn btn-default" ng-click="friends()">Friends</button>
       <button class="btn btn-default" ng-click="ranking()">Ranking</button>
       <label>Search: <input type="text" class="form-control user-search-box" ng-model="searchWord"></label>
    </div>
+   <div uib-alert  class="alert-success user-alert" ng-if="alerts.success" close="successClose()">Friend request send.</div>
+   <div uib-alert  class="alert-danger user-alert" ng-if="alerts.errorFlag" close="dangerClose()">{{alerts.error}}</div>
    <div class="profil" ng-repeat="user in data | filter:searchWord | startFrom:(currentPage - 1) * pageSize | limitTo: pageSize">
 
       <div class="username">
