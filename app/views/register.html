@@ -3,38 +3,42 @@
       <label for="">
          Username
          <input class="form-control" type="text" ng-model="userData.username"></label>
-      <p class="help-block red">
-         {{userData.errors.username}}
-      </p>
+
    </div>
+   <p class="help-block red">
+      {{userData.errors.username}}
+   </p>
    <div>
       <label for="">
          Email
          <input class="form-control" type="text" ng-model="userData.email"></label>
-         <p class="help-block red">
-            {{userData.errors.email}}
-         </p>
+
    </div>
+   <p class="help-block red">
+      {{userData.errors.email}}
+   </p>
    <div>
       <label for="">
          Password
          <input class="form-control" type="password" ng-model="userData.password"></label>
-         <p class="help-block red">
-            {{userData.errors.password}}
-         </p>
+
    </div>
+   <p class="help-block red">
+      {{userData.errors.password}}
+   </p>
    <div>
       <label for="">
          Repeat password
          <input class="form-control" type="password" ng-model="userData.password2"></label>
-         <p class="help-block red">
-            {{userData.errors.password2}}
-         </p>
+
    </div>
+   <p class="help-block red">
+      {{userData.errors.password2}}
+   </p>
 
    <button class="btn btn-default" type="button" ng-click="register()">Register</button>
    <a href="#/login">Login</a>
-   
+
    <img src="./assets/img/moon.png" alt="" class="moon"/>
    <img src="./assets/img/baby-land.png" alt="" class="title"/>
    <img src="./assets/img/clothes.png" alt="" id="clothes"/>

@@ -54,7 +54,7 @@
          <li><img src="assets/img/teddy-bear.png"/><span class="stats">{{player.toys_q}}</span></li>
       </ul>
    </div>
-   <div class="stats-min baby-box">
+   <div class="stats-min baby-box" ng-if="checkLog()">
       <ul>
          <li><img src="assets/img/target.png"/><span uib-popover="I appeared on mouse enter!" popover-trigger="'mouseenter'" class="stats">{{player.points}}</span></li>
          <li><img src="assets/img/diamond.png"/><span class="stats">{{player.diamonds}}</span></li>
