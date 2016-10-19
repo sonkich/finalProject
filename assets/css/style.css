@@ -573,4 +573,24 @@ hr {
 		display: none;
   }
 
+  .water-game-wrapper {
+	  flex-direction: column-reverse;
+	  justify-content: center;
+	  align-items: center;
+  }
+
+  .water-wrapper {
+	  order: 3;
+  }
+
+  .points-count {
+	  order: 1;
+	  width: 300px;
+  }
+
+  .water-game-agenda {
+	  order: 2;
+	  width: 300px;
+  }
+
 }
