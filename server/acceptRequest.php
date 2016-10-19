@@ -13,17 +13,25 @@ if(!empty($_POST)){
    $stmt->execute(array(":receiver"=>$receiver,":sender"=>$sender));
    $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-   $stmt = $pdo->prepare("INSERT INTO friends(username1,username2)
-                                VALUES(:username1, :username2)");
-   $stmt->bindParam(":username1",$receiver);
-   $stmt->bindParam(":username2",$sender);
-   $stmt->execute();
+   $stmt = $pdo->prepare("SELECT * FROM friends WHERE username1=:username1 AND username2=:username2");
+   $stmt->execute(array(":username1"=>$sender,":username2"=>$receiver));
+   $count = $stmt->rowCount();
 
-   $stmt = $pdo->prepare("INSERT INTO friends(username1,username2)
-                                VALUES(:username1, :username2)");
-   $stmt->bindParam(":username1",$sender);
-   $stmt->bindParam(":username2",$receiver);
-   $stmt->execute();
+   if($count == 0){
+      $stmt = $pdo->prepare("INSERT INTO friends(username1,username2)
+                                   VALUES(:username1, :username2)");
+      $stmt->bindParam(":username1",$receiver);
+      $stmt->bindParam(":username2",$sender);
+      $stmt->execute();
+
+      $stmt = $pdo->prepare("INSERT INTO friends(username1,username2)
+                                   VALUES(:username1, :username2)");
+      $stmt->bindParam(":username1",$sender);
+      $stmt->bindParam(":username2",$receiver);
+      $stmt->execute();
+   }
+
+
 
 
 
