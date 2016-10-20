@@ -2,7 +2,15 @@ myApp.controller('foodGameController',function($scope,$location,$rootScope, home
 	$scope.alerts = {};
 	$scope.alerts.gameover = false;
 	$scope.alerts.success = false;
-
+	
+	
+	$scope.successClose = function(){
+	      $scope.alerts.success = false;
+	}
+	
+	$scope.gameoverClose = function(){
+	      $scope.alerts.gameover = false;
+	}
 
 	var list = [
     {
