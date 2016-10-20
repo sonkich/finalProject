@@ -1,5 +1,9 @@
 myApp.controller('foodGameController',function($scope,$location,$rootScope, homeSvc, $timeout) {
-	
+	$scope.alerts = {};
+	$scope.alerts.gameover = false;
+	$scope.alerts.success = false;
+
+
 	var list = [
     {
 	   name : "salad",
@@ -59,19 +63,19 @@ myApp.controller('foodGameController',function($scope,$location,$rootScope, home
 	var currentFood;
 	$scope.foods = [];
 	$scope.trys = 15;
-		
+
 	$scope.ingr1 = '';
 	$scope.ingr2 = '';
 	$scope.ingr3 = '';
-	
+
 	$scope.ch1 = false;
 	$scope.ch2 = false;
 	$scope.ch3 = false;
-	
+
 	$scope.ready1 = false;
 	$scope.ready2 = false;
 	$scope.ready3 = false;
-	
+
 	$scope.loadIngredients = function(item) {
 		$scope.ch1 = false;
 		$scope.ch2 = false;
@@ -87,7 +91,7 @@ myApp.controller('foodGameController',function($scope,$location,$rootScope, home
 			foodLoad ();
 		}
 	}
-	
+
 	$scope.turnVisible = function (index) {
 		if ($scope.trys > 0) {
 			$scope.trys--;
@@ -122,33 +126,33 @@ myApp.controller('foodGameController',function($scope,$location,$rootScope, home
 					homeSvc.setData($rootScope.baby, $rootScope.player);
 				}
 				if ($scope.ready1 == true && $scope.ready2 == true && $scope.ready3 == true) {
-					alert("You Win")
+					$scope.alerts.success = true;
 				}
 			}
 		} else {
-			alert("Game Over");
+			$scope.alerts.gameover = true;
 		}
 	}
-	
+
 	$scope.resetData = function() {
 		currentFood = '';
-		
+
 		$scope.foods = [];
 		$scope.trys = 15;
-			
+
 		$scope.ingr1 = '';
 		$scope.ingr2 = '';
 		$scope.ingr3 = '';
-		
+
 		$scope.ch1 = false;
 		$scope.ch2 = false;
 		$scope.ch3 = false;
-		
+
 		$scope.ready1 = false;
 		$scope.ready2 = false;
 		$scope.ready3 = false;
 	}
-	
+
 	function shuffle(list) {
 		var array = JSON.parse( JSON.stringify(list) );
 	    var counter = array.length;

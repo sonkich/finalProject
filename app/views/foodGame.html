@@ -1,4 +1,9 @@
 <div id="foodGame">
+	<script type="text/ng-template" id="alert.html">
+   <div ng-transclude></div>
+   </script>
+	<div uib-alert  class="alert-success user-alert" ng-if="alerts.success" close="$scope.alerts.success = false">You win!</div>
+   <div uib-alert  class="alert-danger user-alert" ng-if="alerts.gameover" close="$scope.alerts.gameover = false">Game over</div>
 	<div id="model">
 		<div class="card" id="food1" ng-click="loadIngredients($event)">
 			<img ng-show="ready1" src="assets/img/game3/check.png"/>
@@ -22,7 +27,7 @@
 			Each prepared food will give you: 1 <img src="assets/img/diamond.png"/> and  1  <img src="assets/img/meat.png"/>
 		 </p>
     </div>
-	
+
 	<div id="cook">
 		<h2>Ingredients</h2>
 		<div id="inBox">
@@ -36,9 +41,9 @@
 				<img ng-show="ch3" src="assets/img/game3/check.png"/>
 			</div>
 		</div>
-	</div>
-	
+	</div>	
 	<h2>Find ingredients: {{trys}} tries</h2>
+
 	<button ng-click="resetData()" class="btn btn-default">Reset</button>
 	<div class="ingr-wrapper">
         <div class="food" ng-repeat="food in foods track by $index" >
